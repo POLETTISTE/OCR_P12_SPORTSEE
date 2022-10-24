@@ -18,4 +18,8 @@ body {
   color: black;
 }
 
+.split-main-content {
+  display: flex;
+}
+
 /*# sourceMappingURL=style.css.map */

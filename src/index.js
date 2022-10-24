@@ -7,16 +7,21 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import '../src/styles/main.scss'
 import Header from './components/Header'
 import User from './pages/User'
+import Footer from './components/Footer'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Header />
-      <Routes>
-        <Route exact path="/" element={<Accueil />}></Route>
-        <Route path="/user/:id" element={<User />}></Route>
-      </Routes>
+      <div className="split-main-content">
+        <Footer />
+
+        <Routes>
+          <Route exact path="/" element={<Accueil />}></Route>
+          <Route path="/user/:id" element={<User />}></Route>
+        </Routes>
+      </div>
     </BrowserRouter>
   </React.StrictMode>
 )
