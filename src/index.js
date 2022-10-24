@@ -14,9 +14,8 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Header />
-      <div className="split-main-content">
+      <div className="footer-maincontent">
         <Footer />
-
         <Routes>
           <Route exact path="/" element={<Accueil />}></Route>
           <Route path="/user/:id" element={<User />}></Route>

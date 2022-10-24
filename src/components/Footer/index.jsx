@@ -1,5 +1,5 @@
 import React from 'react'
-import '../Footer/style.scss'
+import './style.scss'
 
 import yoga from '../../assets/yoga.png'
 import swim from '../../assets/swim.png'

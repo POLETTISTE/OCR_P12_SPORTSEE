@@ -1,11 +1,12 @@
 //fichier sass
-@use 'variables';
 @use 'Accueil';
+@use 'User';
 
 /* FONTS */
 :root {
   --red: #ff0101;
   --black: #020203;
+  --grey: #fbfbfb;
   --fullwidth: 100%;
 }
 html {
@@ -19,6 +20,6 @@ body {
   color: black;
 }
 
-.split-main-content {
+.footer-maincontent {
   display: flex;
 }
