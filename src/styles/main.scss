@@ -1,2 +1,20 @@
 //fichier sass
+@use 'variables';
 @use 'Accueil';
+
+/* FONTS */
+:root {
+  --red: #ff0101;
+  --black: #020203;
+  --fullwidth: 100%;
+}
+html {
+  font-family: Roboto;
+}
+
+body {
+  margin: 0;
+}
+:visited {
+  color: black;
+}

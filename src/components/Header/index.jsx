@@ -1,15 +1,19 @@
 import React from 'react'
 import logo from '../../assets/logo.png'
 import { NavLink } from 'react-router-dom'
+import '../Header/style.scss'
 
 const Header = () => {
   return (
     <header>
-      <NavLink to="/" className="logo">
-        <img src={logo} alt="" />
-        <h1>Sportsee</h1>
+      <NavLink to="/">
+        <div className="logo">
+          <img src={logo} alt="" className="logo-image" />
+          <h1 className="logo-texte">SportSee</h1>
+        </div>
       </NavLink>
-      <nav>
+
+      <div className="navigation">
         <NavLink to="/">
           <li>Accueil</li>
         </NavLink>
@@ -17,7 +21,7 @@ const Header = () => {
         <li>Profil</li>
         <li>Réglage</li>
         <li>Communauté</li>
-      </nav>
+      </div>
     </header>
   )
 }
