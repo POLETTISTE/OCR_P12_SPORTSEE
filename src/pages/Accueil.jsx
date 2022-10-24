@@ -1,12 +1,7 @@
 import React from 'react'
-import Welcome from '../components/Welcome'
 
 const Accueil = () => {
-  return (
-    <div>
-      <Welcome />
-    </div>
-  )
+  return <div>page accueil</div>
 }
 
 export default Accueil
