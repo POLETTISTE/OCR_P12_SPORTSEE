@@ -1,9 +1,10 @@
 import React from 'react'
 import './style.scss'
-const Welcome = () => {
+const Welcome = (props) => {
+  const name = props.name
   return (
     <div>
-      <h1>Hello Accueil</h1>
+      <h1>Bonjour {name}</h1>
     </div>
   )
 }
