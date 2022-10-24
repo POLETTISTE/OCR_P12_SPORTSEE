@@ -10,12 +10,14 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="footer-thumbs">
-        <img src={yoga} alt="" />
-        <img src={swim} alt="" />
-        <img src={bike} alt="" />
-        <img src={dumbbells} alt="" />
+        <img src={yoga} alt="" className="footer-thumbs-item" />
+        <img src={swim} alt="" className="footer-thumbs-item" />
+        <img src={bike} alt="" className="footer-thumbs-item" />
+        <img src={dumbbells} alt="" className="footer-thumbs-item" />
       </div>
-      <div className="footer-copyright">Copyright, SportSee 2020</div>
+      <div className="footer-copyright">
+        <p>Copyright, SportSee 2020</p>
+      </div>
     </div>
   )
 }
