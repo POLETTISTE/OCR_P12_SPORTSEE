@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from '../../assets/logo.png'
+import sportsee from '../../assets/sportsee.png'
 import { NavLink } from 'react-router-dom'
 import '../Header/style.scss'
 
@@ -9,7 +10,7 @@ const Header = () => {
       <NavLink to="/">
         <div className="logo">
           <img src={logo} alt="" className="logo-image" />
-          <h1 className="logo-texte">SportSee</h1>
+          <img src={sportsee} alt="" className="logo-texte" />
         </div>
       </NavLink>
 
