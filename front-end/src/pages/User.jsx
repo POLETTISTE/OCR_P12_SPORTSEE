@@ -30,22 +30,17 @@ const User = () => {
   return (
     <div className="user">
       <div className="user-top">
-        {/* remplacer par le prenom user */}
-
         {userData &&
           userData.map((user, index) => {
             return (
               <Fragment key={`${index}`}>
                 <Welcome
-                  // key={`${index} welcome`}
                   name={user.userInfos.firstName}
                   congrats="Félicitation ! Vous avez explosé vos objectifs hier 👏"
                 />
                 <div className="user-bottom">
                   <div className="user-bottom-informations-left">
-                    <GraphiqueBarres
-                    // key={`${index} GraphiqueBarres`}
-                    />
+                    <GraphiqueBarres />
                     <div className="diagrammes">
                       <Diagramme className="courbe" />
                       <Diagramme className="toile" />
