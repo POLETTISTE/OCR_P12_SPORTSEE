@@ -37,54 +37,43 @@ const User = () => {
             return (
               <Fragment key={`${index}`}>
                 <Welcome
-                  key={`${index} welcome`}
+                  // key={`${index} welcome`}
                   name={user.userInfos.firstName}
                   congrats="Félicitation ! Vous avez explosé vos objectifs hier 👏"
                 />
                 <div className="user-bottom">
                   <div className="user-bottom-informations-left">
-                    <GraphiqueBarres key={`${index} GraphiqueBarres`} />
+                    <GraphiqueBarres
+                    // key={`${index} GraphiqueBarres`}
+                    />
                     <div className="diagrammes">
-                      <Diagramme
-                        key={`${index} diagramme-courbe`}
-                        className="courbe"
-                      />
-                      <Diagramme
-                        key={`${index} diagramme-toile`}
-                        className="toile"
-                      />
-                      <Diagramme
-                        key={`${index} diagramme-score`}
-                        className="score"
-                      />
+                      <Diagramme className="courbe" />
+                      <Diagramme className="toile" />
+                      <Diagramme className="score" />
                     </div>
                   </div>
-                </div>
-                <div className="user-bottom-informations-right energie">
-                  <Energie
-                    key={`${index} calories`}
-                    image={calories}
-                    name="Calories"
-                    value="1,930kCal"
-                  />
-                  <Energie
-                    key={`${index} proteines`}
-                    image={proteines}
-                    name="Protéines"
-                    value="155g"
-                  />
-                  <Energie
-                    key={`${index} glucides`}
-                    image={glucides}
-                    name="Glucides"
-                    value="290g"
-                  />
-                  <Energie
-                    key={`${index} lipides`}
-                    image={lipides}
-                    name="Lipides"
-                    value="50g"
-                  />
+                  <div className="user-bottom-informations-right energie">
+                    <Energie
+                      image={calories}
+                      name="Calories"
+                      value={`${user.keyData.calorieCount} Kcal`}
+                    />
+                    <Energie
+                      image={proteines}
+                      name="Protéines"
+                      value={`${user.keyData.proteinCount} g`}
+                    />
+                    <Energie
+                      image={glucides}
+                      name="Glucides"
+                      value={`${user.keyData.carbohydrateCount} g`}
+                    />
+                    <Energie
+                      image={lipides}
+                      name="Lipides"
+                      value={`${user.keyData.lipidCount} g`}
+                    />
+                  </div>
                 </div>
               </Fragment>
             )
