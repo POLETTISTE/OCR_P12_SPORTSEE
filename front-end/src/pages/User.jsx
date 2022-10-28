@@ -1,12 +1,22 @@
 import React from 'react'
-import Welcome from '../components/Bonjour'
-import GraphiqueBarres from '../components/GraphiqueBarres'
-import Diagramme from '../components/Diagramme'
-import Energie from '../components/Energie'
+
+//renseigner les props relatives a cet ID
 import calories from '../assets/calories-icon.png'
 import proteines from '../assets/protein-icon.png'
 import glucides from '../assets/carbs-icon.png'
 import lipides from '../assets/fat-icon.png'
+import Welcome from '../components/Bonjour'
+import GraphiqueBarres from '../components/GraphiqueBarres'
+import Diagramme from '../components/Diagramme'
+import Energie from '../components/Energie'
+
+import { USER_MAIN_DATA } from '../data/mocked-data.js'
+
+console.log(USER_MAIN_DATA[0])
+
+//regarder ID dans barre adresse
+
+//filtrer les données en fn de l''id
 
 const User = () => {
   return (
