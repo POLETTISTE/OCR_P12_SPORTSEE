@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import '../src/styles/main.scss'
 
 import reportWebVitals from './reportWebVitals'
 import Accueil from './pages/Accueil'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import '../src/styles/main.scss'
 import Header from './components/Header'
 import User from './pages/User'
 import Error from './pages/Error'
