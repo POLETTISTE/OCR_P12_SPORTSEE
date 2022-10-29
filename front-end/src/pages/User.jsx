@@ -14,7 +14,10 @@ import lipides from '../assets/fat-icon.png'
 //IMPORT COMPOSANTS
 import Welcome from '../components/Bonjour'
 import GraphiqueBarres from '../components/GraphiqueBarres'
-import Diagramme from '../components/Diagramme'
+import DiagrammeCourbe from '../components/DiagrammeCourbe'
+import DiagrammeToile from '../components/DiagrammeToile'
+import DiagrammeScore from '../components/DiagrammeScore'
+
 import Energie from '../components/Energie'
 
 //IMPORT DATA
@@ -44,9 +47,9 @@ const User = () => {
                   <div className="user-bottom-informations-left">
                     <GraphiqueBarres />
                     <div className="diagrammes">
-                      <Diagramme className="courbe" />
-                      <Diagramme className="toile" />
-                      <Diagramme className="score" />
+                      <DiagrammeCourbe className="courbe" />
+                      <DiagrammeToile className="toile" />
+                      <DiagrammeScore className="score" />
                     </div>
                   </div>
                   <div className="user-bottom-informations-right energie">
