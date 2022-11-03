@@ -46,6 +46,7 @@ const User = () => {
                 <div className="user-bottom">
                   <div className="user-bottom-informations-left">
                     <GraphiqueBarres />
+
                     <div className="diagrammes">
                       <DiagrammeCourbe className="courbe" />
                       <DiagrammeToile className="toile" />
