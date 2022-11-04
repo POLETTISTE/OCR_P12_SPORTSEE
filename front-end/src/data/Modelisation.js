@@ -19,9 +19,14 @@ export class Modelisation {
     }
   }
 
-  formatDataScore() {
-    return {
-      todayScore: this.data.map((el) => el.todayScore),
+  formatDataScore(params) {
+    for (let element of this.data) {
+      if (element.id.toString() === params.id) {
+        return {
+          name: 'A1',
+          value: element.todayScore * 100,
+        }
+      }
     }
   }
 
