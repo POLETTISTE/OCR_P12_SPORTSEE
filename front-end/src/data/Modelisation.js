@@ -8,6 +8,7 @@ export class Modelisation {
     this.data = data
   }
 
+  //component Bonjour
   formatUserName(params) {
     for (let element of this.data) {
       if (element.id.toString() === params.id) {
@@ -36,7 +37,7 @@ export class Modelisation {
       name: 'Page A',
       uv: 4000,
       pv: 2400,
-      amt: 2400,
+      // amt: 2400,
 
       day: this.data.map((el) => el.sessions.day),
       kilograms: this.data.map((el) => el.sessions.kilogram),

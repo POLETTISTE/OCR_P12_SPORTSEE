@@ -26,15 +26,6 @@ const Bonjour = (props) => {
         <p>{congrats}</p>
       </div>
     )
-  } else {
-    return (
-      <div className="bonjour">
-        <h1>
-          Bonjour <span>!</span>
-        </h1>
-        <p>{congrats}</p>
-      </div>
-    )
   }
 }
 
