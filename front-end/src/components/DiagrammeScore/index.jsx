@@ -24,6 +24,7 @@ const DiagrammeScore = (props) => {
         <PieChart width={400} height={400}>
           {/* <Pie
             data={[data]}
+
             dataKey="value"
             cx="50%"
             cy="50%"
