@@ -12,7 +12,7 @@ import glucides from '../assets/carbs-icon.png'
 import lipides from '../assets/fat-icon.png'
 
 //IMPORT COMPOSANTS
-import Welcome from '../components/Bonjour'
+import Bonjour from '../components/Bonjour'
 import GraphiqueBarres from '../components/GraphiqueBarres'
 import DiagrammeCourbe from '../components/DiagrammeCourbe'
 import DiagrammeToile from '../components/DiagrammeToile'
@@ -39,7 +39,7 @@ const User = () => {
           userData.map((user, index) => {
             return (
               <Fragment key={`${index}`}>
-                <Welcome
+                <Bonjour
                   name={user.userInfos.firstName}
                   congrats="Félicitation ! Vous avez explosé vos objectifs hier 👏"
                 />
