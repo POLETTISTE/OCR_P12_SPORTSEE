@@ -5,12 +5,6 @@ import { useParams } from 'react-router-dom'
 //IMPORT PAGE ERROR
 import Error from './Error'
 
-//IMPORT ASSETS
-import calories from '../assets/calories-icon.png'
-import proteines from '../assets/protein-icon.png'
-import glucides from '../assets/carbs-icon.png'
-import lipides from '../assets/fat-icon.png'
-
 //IMPORT COMPOSANTS
 import Bonjour from '../components/Bonjour'
 import GraphiqueBarres from '../components/GraphiqueBarres'
@@ -45,8 +39,9 @@ const User = () => {
                 />
                 <div className="user-bottom">
                   <div className="user-bottom-informations-left">
-                    <GraphiqueBarres />
-
+                    <div className="graphique">
+                      <GraphiqueBarres />
+                    </div>
                     <div className="diagrammes">
                       <DiagrammeCourbe className="courbe" />
                       <DiagrammeToile className="toile" />
@@ -54,26 +49,7 @@ const User = () => {
                     </div>
                   </div>
                   <div className="user-bottom-informations-right energie">
-                    <Energie
-                      image={calories}
-                      name="Calories"
-                      value={`${user.keyData.calorieCount} Kcal`}
-                    />
-                    <Energie
-                      image={proteines}
-                      name="Protéines"
-                      value={`${user.keyData.proteinCount} g`}
-                    />
-                    <Energie
-                      image={glucides}
-                      name="Glucides"
-                      value={`${user.keyData.carbohydrateCount} g`}
-                    />
-                    <Energie
-                      image={lipides}
-                      name="Lipides"
-                      value={`${user.keyData.lipidCount} g`}
-                    />
+                    <Energie />
                   </div>
                 </div>
               </Fragment>

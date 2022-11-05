@@ -1,6 +1,5 @@
 // import React from 'react'
-// import './style.scss'
-// export default GraphiqueBarres
+import './style.scss'
 import React, { PureComponent } from 'react'
 import {
   BarChart,

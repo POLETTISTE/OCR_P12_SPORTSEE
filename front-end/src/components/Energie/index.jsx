@@ -1,18 +1,65 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import { useEffect, useState } from 'react'
+import { USER_MAIN_DATA } from '../../data/mocked-data'
+import { Modelisation } from '../../data/Modelisation'
 import './style.scss'
+import { useParams } from 'react-router-dom'
 
-const Energie = (props) => {
-  const { image, name, value } = props
+//IMPORT IMAGES
+import caloriesImg from '../../assets/calories-icon.png'
+import proteinesImg from '../../assets/protein-icon.png'
+import glucidesImg from '../../assets/carbs-icon.png'
+import lipidesImg from '../../assets/fat-icon.png'
 
-  return (
-    <div className={`energie-item energie_${name}`}>
-      <img src={image} alt={name} />
-      <div>
-        <h3>{value}</h3>
-        <p>{name}</p>
-      </div>
-    </div>
-  )
+const calories = 'Calories'
+const proteines = 'Protéines'
+const glucides = 'Glucides'
+const lipides = 'Lipides'
+
+const Energie = () => {
+  const [data, setData] = useState(null)
+  const paramsId = useParams()
+
+  useEffect(() => {
+    const modelisation = new Modelisation(USER_MAIN_DATA)
+    setData(modelisation.formatDataEnergy(paramsId))
+  }, [])
+
+  if (data !== null) {
+    return (
+      <Fragment>
+        <div className={`energie-item energie_${calories}`}>
+          <img src={caloriesImg} alt={calories} />
+          <div>
+            {/* toLocaleString pour séparation des milliers */}
+            <h3>{`${data.calorieCount.toLocaleString('en-IN')}kCal`}</h3>
+            <p>{calories}</p>
+          </div>
+        </div>
+        <div className={`energie-item energie_${proteines}`}>
+          <img src={proteinesImg} alt={proteines} />
+          <div>
+            <h3>{`${data.proteinCount}g`}</h3>
+            <p>{proteines}</p>
+          </div>
+        </div>
+        <div className={`energie-item energie_${glucides}`}>
+          <img src={glucidesImg} alt={glucides} />
+          <div>
+            <h3>{`${data.carbohydrateCount}g`}</h3>
+            <p>{glucides}</p>
+          </div>
+        </div>
+        <div className={`energie-item energie_${lipides}`}>
+          <img src={lipidesImg} alt={lipides} />
+          <div>
+            <h3>{`${data.lipidCount}g`}</h3>
+            <p>{lipides}</p>
+          </div>
+        </div>
+      </Fragment>
+    )
+  }
 }
 
 export default Energie
