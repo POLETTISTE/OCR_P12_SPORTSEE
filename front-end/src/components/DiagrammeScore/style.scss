@@ -14,7 +14,7 @@
   > g:nth-child(1)
   > g:nth-child(1)
   > path {
-  stroke-linejoin: round;
+  fill: transparent;
 }
 
 //EMPTY SCORE USER (TRANSPARENT)
@@ -33,5 +33,5 @@
   > g:nth-child(1)
   > g:nth-child(2)
   > path {
-  fill: transparent;
+  stroke-linejoin: round;
 }

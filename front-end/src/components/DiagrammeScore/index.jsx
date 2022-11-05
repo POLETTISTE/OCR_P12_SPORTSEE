@@ -21,14 +21,14 @@ const DiagrammeScore = (props) => {
   const emptyScore = {
     name: 'empty-score',
     // value: 100 - data.value,
-    value: 44,
+    value: 70,
     //ajouter style color transparent / enlever legende
   }
 
   //creer une data qui recupere l'espace vide (100-taille data modelisation)
   console.log(emptyScore)
   //creer constante globale data 1 + dataEmpty et call dans return
-  const fulldata = [data, emptyScore]
+  const fulldata = [emptyScore, data]
 
   console.log(fulldata)
 
@@ -54,6 +54,8 @@ const DiagrammeScore = (props) => {
               dataKey="value"
               cx="50%"
               cy="50%"
+              startAngle={90}
+              endAngle={-270}
               cornerRadius={40}
               innerRadius={70}
               outerRadius={90}
