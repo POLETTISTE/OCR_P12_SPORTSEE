@@ -17,12 +17,14 @@ const DiagrammeScore = (props) => {
     setData(modelisation.formatDataScore(paramsId))
   }, [])
 
+  //definir use state pour emptyscore value puis use effect changer la value
   const emptyScore = {
     name: 'empty-score',
     // value: 100 - data.value,
     value: 44,
     //ajouter style color transparent / enlever legende
   }
+
   //creer une data qui recupere l'espace vide (100-taille data modelisation)
   console.log(emptyScore)
   //creer constante globale data 1 + dataEmpty et call dans return
@@ -52,6 +54,7 @@ const DiagrammeScore = (props) => {
               dataKey="value"
               cx="50%"
               cy="50%"
+              cornerRadius={40}
               innerRadius={70}
               outerRadius={90}
               fill="#FF0000"

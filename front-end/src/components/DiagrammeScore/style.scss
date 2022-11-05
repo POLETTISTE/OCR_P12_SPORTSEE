@@ -1,1 +1,37 @@
+//SCORE % USER
+#root
+  > div
+  > div.user
+  > div
+  > div.user-bottom
+  > div.user-bottom-informations-left
+  > div.diagrammes
+  > div.diagrammes-item.diagrammes_diagramme-score
+  > div
+  > div
+  > svg
+  > g
+  > g:nth-child(1)
+  > g:nth-child(1)
+  > path {
+  stroke-linejoin: round;
+}
 
+//EMPTY SCORE USER (TRANSPARENT)
+#root
+  > div
+  > div.user
+  > div
+  > div.user-bottom
+  > div.user-bottom-informations-left
+  > div.diagrammes
+  > div.diagrammes-item.diagrammes_diagramme-score
+  > div
+  > div
+  > svg
+  > g
+  > g:nth-child(1)
+  > g:nth-child(2)
+  > path {
+  fill: transparent;
+}
