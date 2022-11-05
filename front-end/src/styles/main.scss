@@ -23,3 +23,18 @@ body {
 .footer-maincontent {
   display: flex;
 }
+
+.diagrammes {
+  border: 3px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &-item {
+    background-color: var(--grey);
+    height: 263px;
+    width: 258px;
+    border: 1px solid red;
+  }
+
+  border-radius: 5px;
+}

@@ -28,7 +28,12 @@ const Energie = () => {
   if (data !== null) {
     return (
       <Fragment>
-        <div className={`energie-item energie_${calories}`}>
+        <div
+          className={`energie-item energie_${calories
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')}`}
+        >
           <img src={caloriesImg} alt={calories} />
           <div>
             {/* toLocaleString pour séparation des milliers */}
@@ -36,21 +41,36 @@ const Energie = () => {
             <p>{calories}</p>
           </div>
         </div>
-        <div className={`energie-item energie_${proteines}`}>
+        <div
+          className={`energie-item energie_${proteines
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')}`}
+        >
           <img src={proteinesImg} alt={proteines} />
           <div>
             <h3>{`${data.proteinCount}g`}</h3>
             <p>{proteines}</p>
           </div>
         </div>
-        <div className={`energie-item energie_${glucides}`}>
+        <div
+          className={`energie-item energie_${glucides
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')}`}
+        >
           <img src={glucidesImg} alt={glucides} />
           <div>
             <h3>{`${data.carbohydrateCount}g`}</h3>
             <p>{glucides}</p>
           </div>
         </div>
-        <div className={`energie-item energie_${lipides}`}>
+        <div
+          className={`energie-item energie_${lipides
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')}`}
+        >
           <img src={lipidesImg} alt={lipides} />
           <div>
             <h3>{`${data.lipidCount}g`}</h3>
