@@ -23,7 +23,7 @@ export class Modelisation {
     for (let element of this.data) {
       if (element.id.toString() === params.id) {
         return {
-          name: 'A1',
+          name: 'score',
           value: element.todayScore * 100,
         }
       }
