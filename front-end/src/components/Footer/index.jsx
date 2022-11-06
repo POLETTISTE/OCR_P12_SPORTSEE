@@ -1,4 +1,6 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
+
 import './style.scss'
 
 import yoga from '../../assets/yoga.png'
@@ -10,10 +12,18 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="footer-thumbs">
-        <img src={yoga} alt="" className="footer-thumbs-item" />
-        <img src={swim} alt="" className="footer-thumbs-item" />
-        <img src={bike} alt="" className="footer-thumbs-item" />
-        <img src={dumbbells} alt="" className="footer-thumbs-item" />
+        <NavLink to="#">
+          <img src={yoga} alt="" className="footer-thumbs-item" />
+        </NavLink>
+        <NavLink to="#">
+          <img src={swim} alt="" className="footer-thumbs-item" />
+        </NavLink>
+        <NavLink to="#">
+          <img src={bike} alt="" className="footer-thumbs-item" />
+        </NavLink>
+        <NavLink to="#">
+          <img src={dumbbells} alt="" className="footer-thumbs-item" />
+        </NavLink>
       </div>
       <div className="footer-copyright">
         <p>Copyright, SportSee 2020</p>
