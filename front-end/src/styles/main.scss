@@ -25,16 +25,15 @@ body {
 }
 
 .diagrammes {
-  border: 3px solid black;
+  // border: 3px solid black;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-radius: 5px;
   &-item {
     background-color: var(--grey);
     height: 263px;
     width: 258px;
-    border: 1px solid red;
+    // border: 1px solid red;
   }
-
-  border-radius: 5px;
 }
