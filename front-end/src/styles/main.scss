@@ -29,11 +29,12 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: 5px;
   &-item {
     background-color: var(--grey);
     height: 263px;
     width: 258px;
     // border: 1px solid red;
+    height: 263px;
+    border-radius: 5px;
   }
 }
