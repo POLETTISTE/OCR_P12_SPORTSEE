@@ -1,6 +1,13 @@
 import './style.scss'
 import React, { PureComponent } from 'react'
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts'
+import {
+  PieChart,
+  Pie,
+  Sector,
+  Cell,
+  ResponsiveContainer,
+  Legend,
+} from 'recharts'
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { USER_MAIN_DATA } from '../../data/mocked-data'
@@ -17,40 +24,31 @@ const DiagrammeScore = (props) => {
     setData(modelisation.formatDataScore(paramsId))
   }, [])
 
-  //definir use state pour emptyscore value puis use effect changer la value
-  const emptyScore = {
-    name: 'empty-score',
-    // value: 100 - data.value,
-    value: 70,
-    //ajouter style color transparent / enlever legende
-  }
-
-  //creer une data qui recupere l'espace vide (100-taille data modelisation)
-  console.log(emptyScore)
-  //creer constante globale data 1 + dataEmpty et call dans return
-  const fulldata = [emptyScore, data]
-
-  console.log(fulldata)
-
-  // const data02 = [{ name: 'A1', value: 12 }]
-
-  if (fulldata !== null) {
+  if (data !== null) {
     return (
       <div className={`diagrammes-item diagrammes_diagramme-${className}`}>
         <ResponsiveContainer width="100%" height="100%">
           <PieChart width={400} height={400}>
-            {/* <Pie
-            data={data02}
-            dataKey="value"
-            cx="50%"
-            cy="50%"
-            innerRadius={70}
-            outerRadius={60}
-            fill="black"
-            label
-          /> */}
             <Pie
-              data={fulldata}
+              data={[]}
+              dataKey="value"
+              cx="50%"
+              cy="50%"
+              innerRadius={70}
+              outerRadius={60}
+              fill="black"
+              label
+            />
+            <Pie
+              data={[
+                {
+                  name: 'empty-score',
+                  value: 100 - data.value,
+                  // value: 70,
+                  //ajouter style color transparent / enlever legende
+                },
+                data,
+              ]}
               dataKey="value"
               cx="50%"
               cy="50%"
@@ -60,7 +58,9 @@ const DiagrammeScore = (props) => {
               innerRadius={70}
               outerRadius={90}
               fill="#FF0000"
-              label
+              // label="labellll"
+              // legendType="hellooo"
+              // labelLine="hello"
             />
           </PieChart>
         </ResponsiveContainer>
