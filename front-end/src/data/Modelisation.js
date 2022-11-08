@@ -19,6 +19,7 @@ export class Modelisation {
     }
   }
 
+  // composant DiagrammeScore
   formatDataScore(params) {
     for (let element of this.data) {
       if (element.id.toString() === params.id) {
@@ -29,6 +30,8 @@ export class Modelisation {
       }
     }
   }
+
+  // composant Energie
   formatDataEnergy(params) {
     for (let element of this.data) {
       if (element.id.toString() === params.id) {
@@ -42,10 +45,22 @@ export class Modelisation {
     }
   }
 
-  formatDataSessions() {
-    return {
-      sessions: this.data.map((el) => el.sessions),
+  formatDataSessions(params) {
+    console.log(this.data)
+    const data = []
+    for (let element of this.data) {
+      if (element.userId.toString() === params.id) {
+        element.sessions.map((el) => {
+          data.push({
+            name: el.day,
+            uv: 0,
+            pv: el.sessionLength,
+            amt: 0,
+          })
+        })
+      }
     }
+    return data
   }
 
   formatDataActivity() {
