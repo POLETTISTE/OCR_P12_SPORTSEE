@@ -84,7 +84,7 @@ export class Modelisation {
             pv: el.sessionLength,
             // amt: 0,
           })
-          return
+          return data
         })
         return data
       }
@@ -93,22 +93,24 @@ export class Modelisation {
 
   formatDataActivity(params) {
     const data = []
+    let sliced
+
     const formatDate = (string) => {
-      console.log(string)
-      let sliced = string.slice(-1)
-      // console.log(popped)
+      string.slice(-2) === '0'
+        ? (sliced = string.slice(-2))
+        : (sliced = string.slice(-1))
       return sliced
     }
+
     for (let element of this.data) {
       if (element.userId.toString() === params.id) {
         element.sessions.map((el) => {
           data.push({
             name: formatDate(el.day),
-            // name: el.day,
             uv: el.kilogram,
             pv: el.calories,
           })
-          return
+          return data
         })
         return data
       }
@@ -120,17 +122,14 @@ export class Modelisation {
     const data = []
 
     for (let element of this.data) {
-      // console.log(element)
       if (element.userId.toString() === params.id) {
         element.data.map((el) => {
           data.push({
-            subject: el.kind,
+            subject: element.kind[el.kind],
             A: el.value,
           })
-          return (el.kind = element.kind[el.kind])
+          return data
         })
-
-        // console.log(data)
         return data
       }
     }
