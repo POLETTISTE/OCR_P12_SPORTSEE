@@ -93,18 +93,18 @@ export class Modelisation {
 
   formatDataActivity(params) {
     const data = []
-    const formatDate = (date) => {
-      // console.log(date)
-      // let popped = date.pop()
+    const formatDate = (string) => {
+      console.log(string)
+      let sliced = string.slice(-1)
       // console.log(popped)
-      // return popped
+      return sliced
     }
     for (let element of this.data) {
       if (element.userId.toString() === params.id) {
         element.sessions.map((el) => {
           data.push({
-            // name: formatDate(el.day),
-            name: el.day,
+            name: formatDate(el.day),
+            // name: el.day,
             uv: el.kilogram,
             pv: el.calories,
           })
