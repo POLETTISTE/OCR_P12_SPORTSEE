@@ -51,16 +51,18 @@ export class Modelisation {
     for (let element of this.data) {
       if (element.userId.toString() === params.id) {
         element.sessions.map((el) => {
+          // switch(el.day)
+
           data.push({
             name: el.day,
-            uv: 0,
+            // uv: 0,
             pv: el.sessionLength,
-            amt: 0,
+            // amt: 0,
           })
         })
+        return data
       }
     }
-    return data
   }
 
   formatDataActivity() {
