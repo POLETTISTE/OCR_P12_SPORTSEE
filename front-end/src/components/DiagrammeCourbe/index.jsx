@@ -4,15 +4,15 @@ import { useEffect, useState } from 'react'
 import { USER_AVERAGE_SESSIONS } from '../../data/mocked-data'
 import { Modelisation } from '../../data/Modelisation'
 
-import React, { PureComponent } from 'react'
+// import React, { PureComponent } from 'react'
 import {
   LineChart,
   Line,
   XAxis,
-  YAxis,
-  CartesianGrid,
+  // YAxis,
+  // CartesianGrid,
   Tooltip,
-  Legend,
+  // Legend,
   ResponsiveContainer,
 } from 'recharts'
 
@@ -24,6 +24,7 @@ const DiagrammeCourbe = (props) => {
   useEffect(() => {
     const modelisation = new Modelisation(USER_AVERAGE_SESSIONS)
     setData(modelisation.formatDataSessions(paramsId))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   if (data !== null) {

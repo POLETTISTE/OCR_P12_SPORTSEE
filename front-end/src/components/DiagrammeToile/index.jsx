@@ -4,28 +4,31 @@ import { useEffect, useState } from 'react'
 import { USER_PERFORMANCE } from '../../data/mocked-data'
 import { Modelisation } from '../../data/Modelisation'
 
-import React, { PureComponent } from 'react'
+// import React, { PureComponent } from 'react'
 import {
   Radar,
   RadarChart,
   PolarGrid,
   PolarAngleAxis,
-  PolarRadiusAxis,
+  // PolarRadiusAxis,
   ResponsiveContainer,
 } from 'recharts'
 
 const DiagrammeToile = (props) => {
   const className = props.className
 
-  const paramsId = useParams()
   const [data, setData] = useState(null)
+
+  const paramsId = useParams()
 
   useEffect(() => {
     const modelisation = new Modelisation(USER_PERFORMANCE)
+
     setData(modelisation.formatDataRadarChart(paramsId))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  console.log(data)
+  // console.log(data)
   if (data !== null) {
     return (
       <div className={`diagrammes-item diagrammes_diagramme-${className}`}>

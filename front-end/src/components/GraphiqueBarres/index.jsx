@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import { USER_ACTIVITY } from '../../data/mocked-data'
 import { Modelisation } from '../../data/Modelisation'
 
-import React, { PureComponent } from 'react'
+// import React, { PureComponent } from 'react'
 import {
   BarChart,
   Bar,
@@ -68,9 +68,10 @@ const GraphiqueBarres = () => {
   useEffect(() => {
     const modelisation = new Modelisation(USER_ACTIVITY)
     setData(modelisation.formatDataActivity(paramsId))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  console.log(data)
+  // console.log(data)
   if (data !== null) {
     return (
       <ResponsiveContainer width="100%" height="100%">

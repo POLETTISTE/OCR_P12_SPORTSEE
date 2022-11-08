@@ -1,12 +1,12 @@
 import './style.scss'
-import React, { PureComponent } from 'react'
+// import React, { PureComponent } from 'react'
 import {
   PieChart,
   Pie,
-  Sector,
-  Cell,
+  // Sector,
+  // Cell,
   ResponsiveContainer,
-  Legend,
+  // Legend,
 } from 'recharts'
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
@@ -22,6 +22,7 @@ const DiagrammeScore = (props) => {
   useEffect(() => {
     const modelisation = new Modelisation(USER_MAIN_DATA)
     setData(modelisation.formatDataScore(paramsId))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   if (data !== null) {

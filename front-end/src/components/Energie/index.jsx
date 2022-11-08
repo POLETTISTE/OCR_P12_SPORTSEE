@@ -23,6 +23,7 @@ const Energie = () => {
   useEffect(() => {
     const modelisation = new Modelisation(USER_MAIN_DATA)
     setData(modelisation.formatDataEnergy(paramsId))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   if (data !== null) {
