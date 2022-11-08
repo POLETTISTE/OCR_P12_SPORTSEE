@@ -19,18 +19,6 @@ export class Modelisation {
     }
   }
 
-  // composant DiagrammeScore
-  formatDataScore(params) {
-    for (let element of this.data) {
-      if (element.id.toString() === params.id) {
-        return {
-          name: 'score',
-          value: element.todayScore * 100,
-        }
-      }
-    }
-  }
-
   // composant Energie
   formatDataEnergy(params) {
     for (let element of this.data) {
@@ -44,7 +32,19 @@ export class Modelisation {
       }
     }
   }
+  // composant Diagramme Score
+  formatDataScore(params) {
+    for (let element of this.data) {
+      if (element.id.toString() === params.id) {
+        return {
+          name: 'score',
+          value: element.todayScore * 100,
+        }
+      }
+    }
+  }
 
+  // composant Diagramme courbe
   formatDataSessions(params) {
     const data = []
     for (let element of this.data) {
@@ -84,23 +84,34 @@ export class Modelisation {
             pv: el.sessionLength,
             // amt: 0,
           })
+          return
         })
         return data
       }
     }
   }
 
-  formatDataActivity() {
-    return {
-      //filter ?
-      name: 'Page A',
-      uv: 4000,
-      pv: 2400,
-      // amt: 2400,
-
-      day: this.data.map((el) => el.sessions.day),
-      kilograms: this.data.map((el) => el.sessions.kilogram),
-      calories: this.data.map((el) => el.sessions.calories),
+  formatDataActivity(params) {
+    const data = []
+    const formatDate = (date) => {
+      // console.log(date)
+      // let popped = date.pop()
+      // console.log(popped)
+      // return popped
+    }
+    for (let element of this.data) {
+      if (element.userId.toString() === params.id) {
+        element.sessions.map((el) => {
+          data.push({
+            // name: formatDate(el.day),
+            name: el.day,
+            uv: el.kilogram,
+            pv: el.calories,
+          })
+          return
+        })
+        return data
+      }
     }
   }
 
@@ -124,48 +135,4 @@ export class Modelisation {
       }
     }
   }
-
-  formatDataPerformances() {
-    return {
-      kind: this.data.map((el) => el.kind),
-      data: this.data.map((el) => el.data),
-    }
-  }
 }
-
-// //formatDataScore()
-// // console.log(USER_MAIN_DATA)
-// const dataApiScore = USER_MAIN_DATA
-// // console.log(dataApiScore)
-// const maClasseScore = new Modelisation(dataApiScore)
-// // console.log(maClasseScore)
-// const maClasseformatDataScore = maClasseScore.formatDataScore()
-// console.log(maClasseformatDataScore)
-
-// //formatDataSessions()
-// // console.log(USER_AVERAGE_SESSIONS)
-// const dataApiSessions = USER_AVERAGE_SESSIONS
-// // console.log(dataApiSessions)
-// const maClasseSessions = new Modelisation(dataApiSessions)
-// // console.log(maClasseSessions)
-// const maClasseformatDataSessions = maClasseSessions.formatDataSessions()
-// console.log(maClasseformatDataSessions)
-
-// //formatDataActivity()
-// // console.log(USER_ACTIVITY)
-// const dataApiActivity = USER_ACTIVITY
-// // console.log(dataApiActivity)
-// const maClasseActivity = new Modelisation(dataApiActivity)
-// // console.log(maClasseActivity)
-// const maClasseformatDataActivity = maClasseActivity.formatDataActivity()
-// console.log(maClasseformatDataActivity)
-
-// //formatDataperformances()
-// // console.log(USER_PERFORMANCE)
-// const dataApiPerformances = USER_PERFORMANCE
-// // console.log(dataApiPerformances)
-// const maClassePerformances = new Modelisation(dataApiPerformances)
-// // console.log(maClassePerformances)
-// const maClasseformatDataPerformances =
-//   maClassePerformances.formatDataPerformances()
-// console.log(maClasseformatDataPerformances)
