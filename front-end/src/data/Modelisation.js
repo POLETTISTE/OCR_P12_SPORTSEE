@@ -46,12 +46,37 @@ export class Modelisation {
   }
 
   formatDataSessions(params) {
-    console.log(this.data)
     const data = []
     for (let element of this.data) {
       if (element.userId.toString() === params.id) {
         element.sessions.map((el) => {
-          // switch(el.day)
+          // convertit les nombres en jours
+          switch (el.day) {
+            case 1:
+              el.day = 'L'
+              break
+
+            case 2:
+              el.day = 'M'
+              break
+            case 3:
+              el.day = 'M'
+              break
+            case 4:
+              el.day = 'J'
+              break
+            case 5:
+              el.day = 'V'
+              break
+            case 6:
+              el.day = 'S'
+              break
+            case 7:
+              el.day = 'D'
+              break
+            default:
+            // console.log(`erreur de jour ${el.day}.`)
+          }
 
           data.push({
             name: el.day,
@@ -79,12 +104,24 @@ export class Modelisation {
     }
   }
 
-  formatDataRadarChart() {
-    return {
-      subject: 'Math',
-      A: 120,
-      B: 110,
-      fullMark: 150,
+  // composant diagramme toile
+  formatDataRadarChart(params) {
+    const data = []
+
+    for (let element of this.data) {
+      // console.log(element)
+      if (element.userId.toString() === params.id) {
+        element.data.map((el) => {
+          data.push({
+            subject: el.kind,
+            A: el.value,
+          })
+          return (el.kind = element.kind[el.kind])
+        })
+
+        // console.log(data)
+        return data
+      }
     }
   }
 

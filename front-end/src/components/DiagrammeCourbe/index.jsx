@@ -30,16 +30,26 @@ const DiagrammeCourbe = (props) => {
     // console.log("data n'est pas nulle", data)
     return (
       <div className={`diagrammes-item diagrammes_diagramme-${className}`}>
+        <div>Durée moyenne des sessions</div>
         <ResponsiveContainer width="100%" height="100%">
           <LineChart width={300} height={100} data={data}>
             <Line
+              name="pv of pages"
               type="natural"
               dataKey="pv"
               stroke="white"
               strokeWidth={1}
               fill="white"
             />
+            {/* <Line
+              name="pv of pages"
+              type="natural"
+              dataKey="pv"
+              stroke="white"
+            /> */}
+
             <XAxis dataKey="name" stroke="white" strokeWidth={0} />
+            <Tooltip />
           </LineChart>
         </ResponsiveContainer>
       </div>
