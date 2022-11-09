@@ -71,8 +71,20 @@ const GraphiqueBarres = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  // console.log(data)
   if (data !== null) {
+    const CustomTooltip = ({ active, payload, label }) => {
+      if (active && payload && payload.length) {
+        return (
+          <div className="custom-tooltip">
+            <p className="kg">{data[label - 1].uv}kg</p>
+            <p className="Kcal">{data[label - 1].pv}Kcal</p>
+          </div>
+        )
+      }
+
+      return null
+    }
+
     return (
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
@@ -86,11 +98,12 @@ const GraphiqueBarres = () => {
             bottom: 5,
           }}
         >
-          <CartesianGrid strokeDasharray="3 3" />
+          <Legend />
+          <CartesianGrid strokeDasharray="2 2" />
           <XAxis dataKey="name" />
           <YAxis />
-          <Tooltip />
-          <Legend />
+          <Tooltip content={<CustomTooltip />} />
+
           <Bar dataKey="pv" fill="#8884d8" />
           <Bar dataKey="uv" fill="#82ca9d" />
         </BarChart>
