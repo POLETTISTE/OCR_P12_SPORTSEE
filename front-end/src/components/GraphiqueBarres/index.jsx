@@ -75,7 +75,7 @@ const GraphiqueBarres = () => {
     const CustomTooltip = ({ active, payload, label }) => {
       if (active && payload && payload.length) {
         return (
-          <div className="custom-tooltip">
+          <div className="custom-tooltip-graphique">
             <p className="kg">{data[label - 1].uv}kg</p>
             <p className="Kcal">{data[label - 1].pv}Kcal</p>
           </div>
@@ -92,20 +92,31 @@ const GraphiqueBarres = () => {
           height={300}
           data={data}
           margin={{
-            top: 5,
+            top: 145,
             right: 30,
             left: 20,
             bottom: 5,
           }}
+          barCategoryGap="40"
         >
           <Legend />
-          <CartesianGrid strokeDasharray="2 2" />
+          <CartesianGrid vertical={false} strokeDasharray="2 2" />
           <XAxis dataKey="name" />
-          <YAxis />
+          <YAxis dataKey="uv" orientation="right" />
           <Tooltip content={<CustomTooltip />} />
 
-          <Bar dataKey="pv" fill="#8884d8" />
-          <Bar dataKey="uv" fill="#82ca9d" />
+          <Bar
+            dataKey="uv"
+            fill="var(--dark-grey)"
+            legendType="circle"
+            name="Poids (kg)"
+          />
+          <Bar
+            dataKey="pv"
+            fill="var(--red)"
+            legendType="circle"
+            name="Calories brûlées (kCal)"
+          />
         </BarChart>
       </ResponsiveContainer>
     )
