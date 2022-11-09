@@ -107,7 +107,7 @@ const GraphiqueBarres = () => {
             dataKey="uv"
             orientation="right"
             type="number"
-            domain={['dataMin-1', 'dataMax+1']}
+            domain={['dataMin-1', 'dataMax+2']}
           />
           <Tooltip
             content={<CustomTooltip />}

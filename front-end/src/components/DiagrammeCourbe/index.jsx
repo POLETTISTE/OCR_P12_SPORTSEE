@@ -10,7 +10,6 @@ import {
   Line,
   XAxis,
   // YAxis,
-  // CartesianGrid,
   Tooltip,
   // Legend,
   ResponsiveContainer,
@@ -53,8 +52,8 @@ const DiagrammeCourbe = (props) => {
             data={data}
             margin={{
               top: 55,
-              right: 10,
-              left: 10,
+              right: 12,
+              left: 12,
               bottom: 5,
             }}
           >
@@ -66,7 +65,11 @@ const DiagrammeCourbe = (props) => {
               fill="white"
             />
 
-            <XAxis dataKey="name" stroke="white" strokeWidth={0} />
+            <XAxis
+              dataKey="name"
+              stroke="rgba(255,255,255, 0.5)"
+              strokeWidth={0}
+            />
 
             <Tooltip
               content={<CustomTooltip />}
