@@ -36,12 +36,12 @@ const DiagrammeToile = (props) => {
           <RadarChart
             cx="50%"
             cy="50%"
-            outerRadius="80%"
+            outerRadius="55%"
             data={data}
             fill="white"
           >
             <PolarGrid />
-            <PolarAngleAxis dataKey="subject" />
+            <PolarAngleAxis dataKey="subject" tick={{ fontSize: 12 }} />
             {/* <PolarRadiusAxis /> */}
             <Radar
               name="Mike"
