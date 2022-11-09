@@ -110,6 +110,7 @@ export class Modelisation {
             name: formatDate(el.day),
             uv: el.kilogram,
             pv: el.calories,
+            // pvgraph: el.calories / 2.5,
           })
           return data
         })
