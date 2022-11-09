@@ -47,6 +47,7 @@ export class Modelisation {
   // composant Diagramme courbe
   formatDataSessions(params) {
     const data = []
+
     for (let element of this.data) {
       if (element.userId.toString() === params.id) {
         element.sessions.map((el) => {

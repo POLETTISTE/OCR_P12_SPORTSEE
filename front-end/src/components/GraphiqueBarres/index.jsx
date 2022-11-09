@@ -76,8 +76,8 @@ const GraphiqueBarres = () => {
       if (active && payload && payload.length) {
         return (
           <div className="custom-tooltip-graphique">
-            <p className="kg">{data[label - 1].uv}kg</p>
-            <p className="Kcal">{data[label - 1].pv}Kcal</p>
+            <p className="kg">{`${payload[1].value} Kcal`}</p>
+            <p className="kg">{`${payload[0].value} kg`}</p>
           </div>
         )
       }

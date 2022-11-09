@@ -28,29 +28,51 @@ const DiagrammeCourbe = (props) => {
   }, [])
 
   if (data !== null) {
-    // console.log("data n'est pas nulle", data)
+    const CustomTooltip = ({ active, payload }) => {
+      if (active && payload && payload.length) {
+        return (
+          <div className="custom-tooltip-courbe">
+            <p className="kg">{`${payload[0].value} min`}</p>
+          </div>
+        )
+      }
+
+      return null
+    }
     return (
       <div className={`diagrammes-item diagrammes_diagramme-${className}`}>
-        <div>Durée moyenne des sessions</div>
+        <p className="title">
+          Durée moyenne des
+          <br />
+          sessions
+        </p>
         <ResponsiveContainer width="100%" height="100%">
-          <LineChart width={300} height={100} data={data}>
+          <LineChart
+            width={300}
+            height={100}
+            data={data}
+            margin={{
+              top: 55,
+              right: 10,
+              left: 10,
+              bottom: 5,
+            }}
+          >
             <Line
-              name="pv of pages"
               type="natural"
               dataKey="pv"
               stroke="white"
               strokeWidth={1}
               fill="white"
             />
-            {/* <Line
-              name="pv of pages"
-              type="natural"
-              dataKey="pv"
-              stroke="white"
-            /> */}
 
             <XAxis dataKey="name" stroke="white" strokeWidth={0} />
-            <Tooltip />
+
+            <Tooltip
+              content={<CustomTooltip />}
+              wrapperStyle={{ outline: 'none' }}
+              cursor={false}
+            />
           </LineChart>
         </ResponsiveContainer>
       </div>
