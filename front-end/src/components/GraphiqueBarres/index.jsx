@@ -102,12 +102,14 @@ const GraphiqueBarres = () => {
         >
           <Legend verticalAlign="top" align="right" />
           <CartesianGrid vertical={false} strokeDasharray="2 2" />
-          <XAxis dataKey="name" />
+          <XAxis dataKey="name" strokeWidth={0} />
           <YAxis
             dataKey="uv"
             orientation="right"
             type="number"
-            domain={['dataMin-1', 'dataMax+2']}
+            domain={['dataMin-1', 'dataMax']}
+            tickCount={3}
+            strokeWidth={0}
           />
           <Tooltip
             content={<CustomTooltip />}

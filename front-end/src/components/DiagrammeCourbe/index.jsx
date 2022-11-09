@@ -47,8 +47,7 @@ const DiagrammeCourbe = (props) => {
         </p>
         <ResponsiveContainer width="100%" height="100%">
           <LineChart
-            width={300}
-            height={100}
+            // width={300}
             data={data}
             margin={{
               top: 55,
@@ -69,6 +68,7 @@ const DiagrammeCourbe = (props) => {
               dataKey="name"
               stroke="rgba(255,255,255, 0.5)"
               strokeWidth={0}
+              tick={{ fontSize: 12 }}
             />
 
             <Tooltip
