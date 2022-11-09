@@ -10,6 +10,29 @@
 }
 
 .custom-tooltip-graphique {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   background-color: var(--red);
   color: white;
+  height: 63px;
+  width: 39px;
+  left: 260px;
+  top: 120px;
+  border-radius: 0px;
+  p {
+    font-family: Roboto;
+    font-size: 7px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: center;
+  }
 }
+
+// .recharts-tooltip-wrapper {
+//   .customTooltip {
+//     background-color: var(--red);
+//     color: white;
+//   }
+// }

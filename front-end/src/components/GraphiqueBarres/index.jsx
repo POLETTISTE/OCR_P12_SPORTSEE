@@ -88,34 +88,45 @@ const GraphiqueBarres = () => {
     return (
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
-          width={500}
-          height={300}
+          // width={500}
+          // height={300}
           data={data}
+          // barCategoryGap="40"
+          barGap="10"
           margin={{
-            top: 145,
+            top: 5,
             right: 30,
             left: 20,
             bottom: 5,
           }}
-          barCategoryGap="40"
         >
-          <Legend />
+          <Legend verticalAlign="top" align="right" />
           <CartesianGrid vertical={false} strokeDasharray="2 2" />
           <XAxis dataKey="name" />
-          <YAxis dataKey="uv" orientation="right" />
-          <Tooltip content={<CustomTooltip />} />
+          <YAxis
+            dataKey="uv"
+            orientation="right"
+            type="number"
+            domain={['dataMin-1', 'dataMax+1']}
+          />
+          <Tooltip
+            content={<CustomTooltip />}
+            wrapperStyle={{ outline: 'none' }}
+          />
 
           <Bar
             dataKey="uv"
             fill="var(--dark-grey)"
             legendType="circle"
             name="Poids (kg)"
+            barSize={10}
           />
           <Bar
             dataKey="pv"
             fill="var(--red)"
             legendType="circle"
             name="Calories brûlées (kCal)"
+            barSize={10}
           />
         </BarChart>
       </ResponsiveContainer>
