@@ -61,12 +61,16 @@ const GraphiqueBarres = () => {
             orientation="right"
             type="number"
             domain={['dataMin-1', 'dataMax+1']}
-            tickCount={5}
+            allowDecimals={false}
+            tickCount={4}
             strokeWidth={0}
           />
+
           <Tooltip
             content={<CustomTooltip />}
-            wrapperStyle={{ outline: 'none' }}
+            wrapperStyle={{
+              outline: 'none',
+            }}
           />
 
           <Bar

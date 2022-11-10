@@ -62,6 +62,12 @@ const DiagrammeCourbe = (props) => {
               stroke="white"
               strokeWidth={1}
               fill="white"
+              dot={false}
+              activeDot={{
+                stroke: 'rgba(255,255,255, 0.6)',
+                strokeWidth: 8,
+                r: 5,
+              }}
             />
 
             <XAxis
@@ -73,8 +79,12 @@ const DiagrammeCourbe = (props) => {
 
             <Tooltip
               content={<CustomTooltip />}
-              wrapperStyle={{ outline: 'none' }}
-              cursor={false}
+              wrapperStyle={{ outline: 'none', backgroundColor: 'transparent' }}
+              // cursor={false}
+              cursor={{
+                stroke: 'rgba(0, 0, 0, 0.1)',
+                strokeWidth: 80,
+              }}
             />
           </LineChart>
         </ResponsiveContainer>
