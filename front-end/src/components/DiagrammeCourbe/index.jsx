@@ -9,7 +9,7 @@ import {
   LineChart,
   Line,
   XAxis,
-  // YAxis,
+  YAxis,
   Tooltip,
   // Legend,
   ResponsiveContainer,
@@ -76,6 +76,7 @@ const DiagrammeCourbe = (props) => {
               strokeWidth={0}
               tick={{ fontSize: 12 }}
             />
+            <YAxis hide padding={{ top: 70, bottom: 20 }} />
 
             <Tooltip
               content={<CustomTooltip />}

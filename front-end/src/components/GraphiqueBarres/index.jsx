@@ -1,7 +1,7 @@
 // import React from 'react'
 import './style.scss'
 import { useParams } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { USER_ACTIVITY } from '../../data/mocked-data'
 import { Modelisation } from '../../data/Modelisation'
 
@@ -16,7 +16,6 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts'
-import { Fragment } from 'react'
 
 const GraphiqueBarres = () => {
   const paramsId = useParams()
@@ -43,21 +42,27 @@ const GraphiqueBarres = () => {
 
     return (
       <Fragment>
-        <div>essai</div>
+        <p className="graphique-title">Activité quotidienne</p>
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={data}
             barGap="10"
             margin={{
-              top: 45,
-              right: 30,
-              left: 20,
-              bottom: 5,
+              top: 0,
+              right: 0,
+              left: 0,
+              bottom: 0,
             }}
           >
-            <Legend verticalAlign="top" align="right" />
+            <Legend
+              verticalAlign="top"
+              align="right"
+              iconSize="8"
+              height={40}
+            />
             <CartesianGrid vertical={false} strokeDasharray="2 2" />
             <XAxis dataKey="name" strokeWidth={0} />
+
             <YAxis
               yAxisId={1}
               dataKey="uv"
@@ -73,7 +78,16 @@ const GraphiqueBarres = () => {
             <Tooltip
               content={<CustomTooltip />}
               wrapperStyle={{
+                // color: '#FFF',
+                // background: 'red',
+                // border: 'none',
                 outline: 'none',
+                // width: '50px',
+                // height: '70px',
+                // textAlign: 'center',
+                // lineHeight: '1.5',
+                // position: 'absolute',
+                // left: '30',
               }}
             />
 
