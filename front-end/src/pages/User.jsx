@@ -39,9 +39,7 @@ const User = () => {
                 />
                 <div className="user-bottom">
                   <div className="user-bottom-informations-left">
-                    <div className="graphique">
-                      <GraphiqueBarres />
-                    </div>
+                    <GraphiqueBarres />
                     <div className="diagrammes">
                       <DiagrammeCourbe className="courbe" />
                       <DiagrammeToile className="toile" />

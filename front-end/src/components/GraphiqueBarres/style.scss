@@ -1,14 +1,16 @@
 .graphique {
+  // position: absolute;
   background-color: var(--grey);
   height: 320px;
   width: 835px;
-
   border-radius: 5px;
   margin-bottom: 38px;
+  &-title {
+    margin: 0;
+  }
 }
 
 .custom-tooltip-graphique {
-  // position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-around;

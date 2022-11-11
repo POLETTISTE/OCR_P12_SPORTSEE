@@ -1,7 +1,7 @@
 // import React from 'react'
 import './style.scss'
 import { useParams } from 'react-router-dom'
-import { Fragment, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { USER_ACTIVITY } from '../../data/mocked-data'
 import { Modelisation } from '../../data/Modelisation'
 
@@ -41,7 +41,7 @@ const GraphiqueBarres = () => {
     }
 
     return (
-      <Fragment>
+      <div className="graphique">
         <p className="graphique-title">Activité quotidienne</p>
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
@@ -78,16 +78,7 @@ const GraphiqueBarres = () => {
             <Tooltip
               content={<CustomTooltip />}
               wrapperStyle={{
-                // color: '#FFF',
-                // background: 'red',
-                // border: 'none',
                 outline: 'none',
-                // width: '50px',
-                // height: '70px',
-                // textAlign: 'center',
-                // lineHeight: '1.5',
-                // position: 'absolute',
-                // left: '30',
               }}
             />
 
@@ -111,7 +102,7 @@ const GraphiqueBarres = () => {
             />
           </BarChart>
         </ResponsiveContainer>
-      </Fragment>
+      </div>
     )
   }
 }
