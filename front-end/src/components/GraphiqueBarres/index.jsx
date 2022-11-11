@@ -68,7 +68,7 @@ const GraphiqueBarres = () => {
               tickCount={4}
               strokeWidth={0}
             />
-            <YAxis dataKey="pv" yAxisId={2} />
+            <YAxis hide dataKey="pv" yAxisId={2} />
 
             <Tooltip
               content={<CustomTooltip />}
