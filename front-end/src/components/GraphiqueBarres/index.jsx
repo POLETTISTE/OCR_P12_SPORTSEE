@@ -16,6 +16,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts'
+import { Fragment } from 'react'
 
 const GraphiqueBarres = () => {
   const paramsId = useParams()
@@ -24,8 +25,7 @@ const GraphiqueBarres = () => {
   useEffect(() => {
     const modelisation = new Modelisation(USER_ACTIVITY)
     setData(modelisation.formatDataActivity(paramsId))
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [paramsId])
 
   if (data !== null) {
     const CustomTooltip = ({ active, payload, label }) => {
@@ -42,55 +42,62 @@ const GraphiqueBarres = () => {
     }
 
     return (
-      <ResponsiveContainer width="100%" height="100%">
-        <BarChart
-          data={data}
-          barGap="10"
-          margin={{
-            top: 45,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-        >
-          <Legend verticalAlign="top" align="right" />
-          <CartesianGrid vertical={false} strokeDasharray="2 2" />
-          <XAxis dataKey="name" strokeWidth={0} />
-          <YAxis
-            dataKey="uv"
-            orientation="right"
-            type="number"
-            domain={['dataMin-1', 'dataMax+1']}
-            allowDecimals={false}
-            tickCount={4}
-            strokeWidth={0}
-          />
-
-          <Tooltip
-            content={<CustomTooltip />}
-            wrapperStyle={{
-              outline: 'none',
+      <Fragment>
+        <div>essai</div>
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart
+            data={data}
+            barGap="10"
+            margin={{
+              top: 45,
+              right: 30,
+              left: 20,
+              bottom: 5,
             }}
-          />
+          >
+            <Legend verticalAlign="top" align="right" />
+            <CartesianGrid vertical={false} strokeDasharray="2 2" />
+            <XAxis dataKey="name" strokeWidth={0} />
+            <YAxis
+              yAxisId={1}
+              dataKey="uv"
+              orientation="right"
+              type="number"
+              domain={['dataMin-1', 'dataMax+1']}
+              allowDecimals={false}
+              tickCount={4}
+              strokeWidth={0}
+            />
+            <YAxis dataKey="pv" yAxisId={2} />
 
-          <Bar
-            dataKey="uv"
-            fill="var(--dark-grey)"
-            legendType="circle"
-            name="Poids (kg)"
-            barSize={10}
-            radius={[10, 10, 0, 0]}
-          />
-          <Bar
-            dataKey="pv"
-            fill="var(--red)"
-            legendType="circle"
-            name="Calories brûlées (kCal)"
-            barSize={10}
-            radius={[10, 10, 0, 0]}
-          />
-        </BarChart>
-      </ResponsiveContainer>
+            <Tooltip
+              content={<CustomTooltip />}
+              wrapperStyle={{
+                outline: 'none',
+              }}
+            />
+
+            <Bar
+              yAxisId={1}
+              dataKey="uv"
+              fill="var(--dark-grey)"
+              legendType="circle"
+              name="Poids (kg)"
+              barSize={10}
+              radius={[10, 10, 0, 0]}
+            />
+            <Bar
+              yAxisId={2}
+              dataKey="pv"
+              fill="var(--red)"
+              legendType="circle"
+              name="Calories brûlées (kCal)"
+              barSize={10}
+              radius={[10, 10, 0, 0]}
+            />
+          </BarChart>
+        </ResponsiveContainer>
+      </Fragment>
     )
   }
 }
