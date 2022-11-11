@@ -1,5 +1,6 @@
 // import React, { Fragment } from 'react'
 import React from 'react'
+import SelectUser from '../components/SelectUser'
 
 const Accueil = () => {
   return (
@@ -10,6 +11,7 @@ const Accueil = () => {
             Bonjour <span>!</span>
           </h1>
         </div>
+        <SelectUser />
       </div>
       <div className="accueil-bottom"></div>
     </div>
