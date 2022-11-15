@@ -8,8 +8,7 @@ import {
   ResponsiveContainer,
   // Legend,
 } from 'recharts'
-import { useParams } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+
 import { USER_MAIN_DATA } from '../../data/mocked-data'
 import { Modelisation } from '../../data/Modelisation'
 import useFetch from '../../hooks/useFetch'
@@ -58,8 +57,6 @@ function DiagrammeScore({ userId }) {
                 {
                   name: 'empty-score',
                   value: 100 - getData(),
-                  // value: 70,
-                  //ajouter style color transparent / enlever legende
                 },
                 {
                   name: 'score',

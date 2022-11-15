@@ -43,9 +43,9 @@ const User = () => {
               <DiagrammeScore userId={params.userId} />
             </div>
           </div>
-          {/* <div className="user-bottom-informations-right energie">
-              <Energie />
-            </div> */}
+          <div className="user-bottom-informations-right energie">
+            <Energie userId={params.userId} />
+          </div>
         </div>
         {/* </Fragment> */}
         {/* )  })} */}

@@ -16,17 +16,10 @@ export class Modelisation {
   }
 
   // composant Energie
-  formatDataEnergy(params) {
-    for (let element of this.data) {
-      if (element.id.toString() === params.id) {
-        return {
-          calorieCount: element.keyData.calorieCount,
-          proteinCount: element.keyData.proteinCount,
-          carbohydrateCount: element.keyData.carbohydrateCount,
-          lipidCount: element.keyData.lipidCount,
-        }
-      }
-    }
+  formatDataEnergy() {
+    const dataFormated = this.data.keyData
+
+    return dataFormated
   }
 
   //graphique
