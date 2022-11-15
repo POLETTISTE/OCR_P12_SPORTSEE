@@ -1,8 +1,8 @@
 import './style.scss'
-import { useParams } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+
 import { USER_AVERAGE_SESSIONS } from '../../data/mocked-data'
 import { Modelisation } from '../../data/Modelisation'
+import useFetch from '../../hooks/useFetch'
 
 // import React, { PureComponent } from 'react'
 import {
@@ -15,16 +15,26 @@ import {
   ResponsiveContainer,
 } from 'recharts'
 
-const DiagrammeCourbe = (props) => {
-  const className = props.className
-  const [data, setData] = useState(null)
-  const paramsId = useParams()
+function DiagrammeCourbe({ userId }) {
+  const { data, error } = useFetch(
+    `http://localhost:3000/user/${userId}/average-sessions`,
+    getUserDataMockWithId()
+  )
 
-  useEffect(() => {
-    const modelisation = new Modelisation(USER_AVERAGE_SESSIONS)
-    setData(modelisation.formatDataSessions(paramsId))
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  function getUserDataMockWithId() {
+    // console.log('dans fonction getUserDataMockWithId')
+    const userData = USER_AVERAGE_SESSIONS.find(
+      (user) => +user.userId === +userId
+    )
+    // console.log('userdata', userData)
+    return userData
+  }
+
+  function getData() {
+    const modelisation = new Modelisation(data)
+    // console.log('modelisation', modelisation)
+    return modelisation.formatDataSessions()
+  }
 
   if (data !== null) {
     const CustomTooltip = ({ active, payload }) => {
@@ -39,7 +49,7 @@ const DiagrammeCourbe = (props) => {
       return null
     }
     return (
-      <div className={`diagrammes-item diagrammes_diagramme-${className}`}>
+      <div className={`diagrammes-item diagrammes_diagramme-courbe`}>
         <p className="title">
           Durée moyenne des
           <br />
@@ -48,7 +58,7 @@ const DiagrammeCourbe = (props) => {
         <ResponsiveContainer width="100%" height="100%">
           <LineChart
             // width={300}
-            data={data}
+            data={getData()}
             margin={{
               top: 55,
               right: 12,

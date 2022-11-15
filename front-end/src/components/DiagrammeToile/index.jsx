@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { USER_PERFORMANCE } from '../../data/mocked-data'
 import { Modelisation } from '../../data/Modelisation'
+import useFetch from '../../hooks/useFetch'
 
 // import React, { PureComponent } from 'react'
 import {
@@ -14,30 +15,35 @@ import {
   ResponsiveContainer,
 } from 'recharts'
 
-const DiagrammeToile = (props) => {
-  const className = props.className
+function DiagrammeToile({ userId }) {
+  const { data, error } = useFetch(
+    `http://localhost:3000/user/${userId}/performance`,
+    getUserDataMockWithId()
+  )
 
-  const [data, setData] = useState(null)
+  function getUserDataMockWithId() {
+    // console.log('dans fonction getUserDataMockWithId')
+    const userData = USER_PERFORMANCE.find((user) => +user.userId === +userId)
+    // console.log('userdata', userData)
+    return userData
+  }
 
-  const paramsId = useParams()
-
-  useEffect(() => {
-    const modelisation = new Modelisation(USER_PERFORMANCE)
-
-    setData(modelisation.formatDataRadarChart(paramsId))
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  function getData() {
+    const modelisation = new Modelisation(data)
+    // console.log('modelisation', modelisation)
+    return modelisation.formatDataRadarChart()
+  }
 
   // console.log(data)
   if (data !== null) {
     return (
-      <div className={`diagrammes-item diagrammes_diagramme-${className}`}>
+      <div className={`diagrammes-item diagrammes_diagramme-toile`}>
         <ResponsiveContainer width="100%" height="100%">
           <RadarChart
             cx="50%"
             cy="50%"
             outerRadius="55%"
-            data={data}
+            data={getData()}
             fill="white"
           >
             <PolarGrid />

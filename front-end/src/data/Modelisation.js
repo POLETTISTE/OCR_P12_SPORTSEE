@@ -39,109 +39,67 @@ export class Modelisation {
       }
     }
   }
-
-  // composant Diagramme courbe
-  formatDataSessions(params) {
-    const data = []
-
-    for (let element of this.data) {
-      if (element.userId.toString() === params.id) {
-        element.sessions.map((el) => {
-          // convertit les nombres en jours
-          switch (el.day) {
-            case 1:
-              el.day = 'L'
-              break
-
-            case 2:
-              el.day = 'M'
-              break
-            case 3:
-              el.day = 'M'
-              break
-            case 4:
-              el.day = 'J'
-              break
-            case 5:
-              el.day = 'V'
-              break
-            case 6:
-              el.day = 'S'
-              break
-            case 7:
-              el.day = 'D'
-              break
-            default:
-            // console.log(`erreur de jour ${el.day}.`)
-          }
-
-          data.push({
-            name: el.day,
-            // uv: 0,
-            pv: el.sessionLength,
-            // amt: 0,
-          })
-          return data
-        })
-        return data
-      }
-    }
-  }
+  //graphique
   formatDataActivity() {
     const dataFormated = this.data?.sessions.map((item, index) => {
       return {
         name: index + 1,
-        uv: item.calories,
-        pv: item.kilogram,
+        uv: item.kilogram,
+        pv: item.calories,
+      }
+    })
+
+    return dataFormated
+  }
+  // composant Diagramme courbe
+  formatDataSessions() {
+    const dataFormated = this.data?.sessions.map((item) => {
+      // convertit les nombres en jours
+      switch (item.day) {
+        case 1:
+          item.day = 'L'
+          break
+
+        case 2:
+          item.day = 'M'
+          break
+        case 3:
+          item.day = 'M'
+          break
+        case 4:
+          item.day = 'J'
+          break
+        case 5:
+          item.day = 'V'
+          break
+        case 6:
+          item.day = 'S'
+          break
+        case 7:
+          item.day = 'D'
+          break
+        default:
+        // console.log(`erreur de jour ${el.day}.`)
+      }
+      return {
+        name: item.day,
+        // uv: 0,
+        pv: item.sessionLength,
+        // amt: 0,
       }
     })
 
     return dataFormated
   }
 
-  // formatDataActivity() {
-  //   console.log('dans classe de modelisation')
-  //   const data = []
-  //   let sliced
-
-  //   const formatDate = (string) => {
-  //     string.slice(-2) === '0'
-  //       ? (sliced = string.slice(-2))
-  //       : (sliced = string.slice(-1))
-  //     return sliced
-  //   }
-
-  //   for (let element of this.data) {
-  //     if (element.userId.toString() === params.id) {
-  //       element.sessions.map((el) => {
-  //         data.push({
-  //           name: formatDate(el.day),
-  //           uv: el.kilogram,
-  //           pv: el.calories,
-  //           // pvgraph: el.calories / 2.5,
-  //         })
-  //         return data
-  //       })
-  //       return data
-  //     }
-  //   }
-  // }
-
   // composant diagramme toile
-  formatDataRadarChart(params) {
-    const data = []
-
-    for (let element of this.data) {
-      if (element.userId.toString() === params.id) {
-        element.data.map((el) => {
-          data.push({
-            subject: element.kind[el.kind],
-            A: el.value,
-          })
-          return data
-        })
-        return data
+  formatDataRadarChart() {
+    const dataFormated = this.data?.data.map((item) => {
+      return {
+        subject: this.data?.kind[item.kind],
+        A: item.value,
       }
-    }
+    })
+    return dataFormated
   }
 }

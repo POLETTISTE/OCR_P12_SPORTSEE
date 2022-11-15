@@ -37,11 +37,11 @@ const User = () => {
           <div className="user-bottom-informations-left">
             <GraphiqueBarres userId={params.userId} />
 
-            {/* <div className="diagrammes">
-                <DiagrammeCourbe className="courbe" />
-                <DiagrammeToile className="toile" />
-                <DiagrammeScore className="score" />
-              </div> */}
+            <div className="diagrammes">
+              <DiagrammeCourbe userId={params.userId} />
+              <DiagrammeToile userId={params.userId} />
+              {/* <DiagrammeScore className="score" /> */}
+            </div>
           </div>
           {/* <div className="user-bottom-informations-right energie">
               <Energie />
