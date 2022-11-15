@@ -1,9 +1,8 @@
 // import React from 'react'
 import './style.scss'
-import { useParams } from 'react-router-dom'
-import { useEffect, useState } from 'react'
 import { USER_ACTIVITY } from '../../data/mocked-data'
 import { Modelisation } from '../../data/Modelisation'
+import useFetch from '../../hooks/useFetch'
 
 // import React, { PureComponent } from 'react'
 import {
@@ -17,14 +16,24 @@ import {
   ResponsiveContainer,
 } from 'recharts'
 
-const GraphiqueBarres = () => {
-  const paramsId = useParams()
-  const [data, setData] = useState(null)
+function GraphiqueBarres({ userId }) {
+  const { data, error } = useFetch(
+    `http://localhost:3000/user/${userId}/activity`,
+    getUserDataMockWithId()
+  )
 
-  useEffect(() => {
-    const modelisation = new Modelisation(USER_ACTIVITY)
-    setData(modelisation.formatDataActivity(paramsId))
-  }, [paramsId])
+  function getUserDataMockWithId() {
+    // console.log('dans fonction getUserDataMockWithId')
+    const userData = USER_ACTIVITY.find((user) => +user.userId === +userId)
+    // console.log('userdata', userData)
+    return userData
+  }
+
+  function getData() {
+    const modelisation = new Modelisation(data)
+    // console.log('modelisation', modelisation)
+    return modelisation.formatDataActivity()
+  }
 
   if (data !== null) {
     const CustomTooltip = ({ active, payload, label }) => {
@@ -45,7 +54,7 @@ const GraphiqueBarres = () => {
         <p className="graphique-title">Activité quotidienne</p>
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
-            data={data}
+            data={getData()}
             barGap="10"
             margin={{
               top: 0,
@@ -106,4 +115,5 @@ const GraphiqueBarres = () => {
     )
   }
 }
+
 export default GraphiqueBarres

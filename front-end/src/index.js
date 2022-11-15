@@ -19,7 +19,7 @@ root.render(
         <Footer />
         <Routes>
           <Route exact path="/" element={<Accueil />}></Route>
-          <Route path="/user/:id" element={<User />}></Route>
+          <Route path="/user/:userId" element={<User />}></Route>
           <Route path="*" element={<Error />}></Route>
         </Routes>
       </div>

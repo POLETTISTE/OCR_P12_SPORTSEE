@@ -1,29 +1,36 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
+import useFetch from '../../hooks/useFetch'
+
 import { USER_MAIN_DATA } from '../../data/mocked-data'
 import { Modelisation } from '../../data/Modelisation'
 import './style.scss'
 
 import { useParams } from 'react-router-dom'
 
-const Bonjour = (props) => {
-  const [data, setData] = useState(null)
-  const paramsId = useParams()
+const Bonjour = ({ userId }) => {
+  const { data, error } = useFetch(
+    `http://localhost:3000/user/${userId}`,
+    getUserDataMockWithId()
+  )
 
-  useEffect(() => {
-    const modelisation = new Modelisation(USER_MAIN_DATA)
-    setData(modelisation.formatUserName(paramsId))
-  }, [])
+  function getUserDataMockWithId() {
+    const userData = USER_MAIN_DATA.find((user) => +user.userId === +userId)
+    return userData
+  }
 
-  const congrats = props.congrats
+  function getData() {
+    const modelisation = new Modelisation(data)
+    return modelisation.formatUserName()
+  }
 
   if (data !== null) {
     return (
       <div className="bonjour">
         <h1>
-          Bonjour <span>{data.name}</span>
+          Bonjour <span>{getData()}</span>
         </h1>
-        <p>{congrats}</p>
+        <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
       </div>
     )
   }

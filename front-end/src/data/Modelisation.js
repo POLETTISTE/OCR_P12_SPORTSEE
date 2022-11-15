@@ -9,14 +9,10 @@ export class Modelisation {
   }
 
   //component Bonjour
-  formatUserName(params) {
-    for (let element of this.data) {
-      if (element.id.toString() === params.id) {
-        return {
-          name: element.userInfos.firstName,
-        }
-      }
-    }
+  formatUserName() {
+    const dataFormated = this.data.userInfos.firstName
+
+    return dataFormated
   }
 
   // composant Energie
@@ -91,33 +87,45 @@ export class Modelisation {
       }
     }
   }
-
-  formatDataActivity(params) {
-    const data = []
-    let sliced
-
-    const formatDate = (string) => {
-      string.slice(-2) === '0'
-        ? (sliced = string.slice(-2))
-        : (sliced = string.slice(-1))
-      return sliced
-    }
-
-    for (let element of this.data) {
-      if (element.userId.toString() === params.id) {
-        element.sessions.map((el) => {
-          data.push({
-            name: formatDate(el.day),
-            uv: el.kilogram,
-            pv: el.calories,
-            // pvgraph: el.calories / 2.5,
-          })
-          return data
-        })
-        return data
+  formatDataActivity() {
+    const dataFormated = this.data?.sessions.map((item, index) => {
+      return {
+        name: index + 1,
+        uv: item.calories,
+        pv: item.kilogram,
       }
-    }
+    })
+
+    return dataFormated
   }
+
+  // formatDataActivity() {
+  //   console.log('dans classe de modelisation')
+  //   const data = []
+  //   let sliced
+
+  //   const formatDate = (string) => {
+  //     string.slice(-2) === '0'
+  //       ? (sliced = string.slice(-2))
+  //       : (sliced = string.slice(-1))
+  //     return sliced
+  //   }
+
+  //   for (let element of this.data) {
+  //     if (element.userId.toString() === params.id) {
+  //       element.sessions.map((el) => {
+  //         data.push({
+  //           name: formatDate(el.day),
+  //           uv: el.kilogram,
+  //           pv: el.calories,
+  //           // pvgraph: el.calories / 2.5,
+  //         })
+  //         return data
+  //       })
+  //       return data
+  //     }
+  //   }
+  // }
 
   // composant diagramme toile
   formatDataRadarChart(params) {
