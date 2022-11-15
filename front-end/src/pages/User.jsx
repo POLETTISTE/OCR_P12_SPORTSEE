@@ -40,7 +40,7 @@ const User = () => {
             <div className="diagrammes">
               <DiagrammeCourbe userId={params.userId} />
               <DiagrammeToile userId={params.userId} />
-              {/* <DiagrammeScore className="score" /> */}
+              <DiagrammeScore userId={params.userId} />
             </div>
           </div>
           {/* <div className="user-bottom-informations-right energie">

@@ -12,25 +12,32 @@ import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { USER_MAIN_DATA } from '../../data/mocked-data'
 import { Modelisation } from '../../data/Modelisation'
+import useFetch from '../../hooks/useFetch'
 
-const DiagrammeScore = (props) => {
-  const className = props.className
+function DiagrammeScore({ userId }) {
+  const { data, error } = useFetch(
+    `http://localhost:3000/user/${userId}`,
+    getUserDataMockWithId()
+  )
+  function getUserDataMockWithId() {
+    // console.log('dans fonction getUserDataMockWithId')
+    const userData = USER_MAIN_DATA.find((user) => +user.userId === +userId)
+    // console.log('userdata', userData)
+    return userData
+  }
 
-  const [data, setData] = useState(null)
-  const paramsId = useParams()
-
-  useEffect(() => {
-    const modelisation = new Modelisation(USER_MAIN_DATA)
-    setData(modelisation.formatDataScore(paramsId))
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  function getData() {
+    const modelisation = new Modelisation(data)
+    // console.log('modelisation', modelisation)
+    return modelisation.formatDataScore()
+  }
 
   if (data !== null) {
     return (
-      <div className={`diagrammes-item diagrammes_diagramme-${className}`}>
+      <div className={`diagrammes-item diagrammes_diagramme-score`}>
         <p className="title-score">Score</p>
         <div className="objectif">
-          <p className="objectif-score">{data.value}%</p>
+          <p className="objectif-score">{getData()}%</p>
           <p className="objectif-score-texte">de votre</p>
           <p className="objectif-score-texte">objectif</p>
         </div>
@@ -50,11 +57,14 @@ const DiagrammeScore = (props) => {
               data={[
                 {
                   name: 'empty-score',
-                  value: 100 - data.value,
+                  value: 100 - getData(),
                   // value: 70,
                   //ajouter style color transparent / enlever legende
                 },
-                data,
+                {
+                  name: 'score',
+                  value: getData(),
+                },
               ]}
               dataKey="value"
               cx="50%"

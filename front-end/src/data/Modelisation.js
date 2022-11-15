@@ -28,17 +28,7 @@ export class Modelisation {
       }
     }
   }
-  // composant Diagramme Score
-  formatDataScore(params) {
-    for (let element of this.data) {
-      if (element.id.toString() === params.id) {
-        return {
-          name: 'score',
-          value: element.todayScore * 100,
-        }
-      }
-    }
-  }
+
   //graphique
   formatDataActivity() {
     const dataFormated = this.data?.sessions.map((item, index) => {
@@ -100,6 +90,12 @@ export class Modelisation {
         A: item.value,
       }
     })
+    return dataFormated
+  }
+
+  // composant Diagramme Score
+  formatDataScore() {
+    const dataFormated = this.data.todayScore * 100
     return dataFormated
   }
 }
