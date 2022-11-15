@@ -1,43 +1,24 @@
-//SCORE % USER
+//EMPTY SCORE USER (TRANSPARENT)
 #root
   > div
   > div.user
-  > div
   > div.user-bottom
   > div.user-bottom-informations-left
   > div.diagrammes
   > div.diagrammes-item.diagrammes_diagramme-score
-  > div
+  > div.recharts-responsive-container
   > div
   > svg
   > g
-  > g:nth-child(1)
+  > g
   > g:nth-child(1)
   > path {
   fill: transparent;
 }
 
-//EMPTY SCORE USER (TRANSPARENT)
-#root
-  > div
-  > div.user
-  > div
-  > div.user-bottom
-  > div.user-bottom-informations-left
-  > div.diagrammes
-  > div.diagrammes-item.diagrammes_diagramme-score
-  > div
-  > div
-  > svg
-  > g
-  > g:nth-child(1)
-  > g:nth-child(2)
-  > path {
-  stroke-linejoin: round;
-}
-
 .diagrammes_diagramme-score {
   position: relative;
+  stroke-linejoin: round;
 }
 
 .title-score {

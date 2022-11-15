@@ -28,27 +28,20 @@ const User = () => {
   return (
     <div className="user">
       <div className="user-top">
-        {/* {userData &&
-          userData.map((user, index) => {
-            return ( */}
-        {/* <Fragment key={`${index}`}> */}
         <Bonjour userId={params.userId} />
-        <div className="user-bottom">
-          <div className="user-bottom-informations-left">
-            <GraphiqueBarres userId={params.userId} />
-
-            <div className="diagrammes">
-              <DiagrammeCourbe userId={params.userId} />
-              <DiagrammeToile userId={params.userId} />
-              <DiagrammeScore userId={params.userId} />
-            </div>
-          </div>
-          <div className="user-bottom-informations-right energie">
-            <Energie userId={params.userId} />
+      </div>
+      <div className="user-bottom">
+        <div className="user-bottom-informations-left">
+          <GraphiqueBarres userId={params.userId} />
+          <div className="diagrammes">
+            <DiagrammeCourbe userId={params.userId} />
+            <DiagrammeToile userId={params.userId} />
+            <DiagrammeScore userId={params.userId} />
           </div>
         </div>
-        {/* </Fragment> */}
-        {/* )  })} */}
+        <div className="user-bottom-informations-right">
+          <Energie userId={params.userId} />
+        </div>
       </div>
     </div>
   )

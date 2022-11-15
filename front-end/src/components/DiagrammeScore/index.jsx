@@ -27,11 +27,11 @@ function DiagrammeScore({ userId }) {
 
   function getData() {
     const modelisation = new Modelisation(data)
-    // console.log('modelisation', modelisation)
     return modelisation.formatDataScore()
   }
 
   if (data !== null) {
+    console.log(getData())
     return (
       <div className={`diagrammes-item diagrammes_diagramme-score`}>
         <p className="title-score">Score</p>

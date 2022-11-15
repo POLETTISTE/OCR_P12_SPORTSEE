@@ -88,7 +88,7 @@ export class Modelisation {
 
   // composant Diagramme Score
   formatDataScore() {
-    const dataFormated = this.data.todayScore * 100
+    const dataFormated = this.data.todayScore * 100 || this.data.score * 100
     return dataFormated
   }
 }
