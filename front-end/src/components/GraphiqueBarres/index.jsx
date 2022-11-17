@@ -37,7 +37,7 @@ function GraphiqueBarres({ userId }) {
       if (active && payload && payload.length) {
         return (
           <div className="custom-tooltip-graphique">
-            <p className="kg">{`${payload[1].value} Kcal`}</p>
+            <p className="Kcal">{`${payload[1].value} Kcal`}</p>
             <p className="kg">{`${payload[0].value} kg`}</p>
           </div>
         )
@@ -65,6 +65,7 @@ function GraphiqueBarres({ userId }) {
               align="right"
               iconSize="8"
               height={40}
+              wrapperStyle={{ top: -22, right: 30 }}
             />
             <CartesianGrid vertical={false} strokeDasharray="2 2" />
             <XAxis

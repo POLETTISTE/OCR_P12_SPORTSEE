@@ -1,15 +1,10 @@
 .diagrammes_diagramme-courbe {
   background-color: var(--red);
+  margin: 0;
   .title {
     position: absolute;
     height: 48px;
 
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 24px;
-    /* or 160% */
     margin-top: 29px;
     margin-left: 34px;
     color: white;
@@ -27,7 +22,7 @@
   border-radius: 0px;
   background-color: white;
   p {
-    font-family: Roboto;
+    font-family: 'Roboto';
     font-size: 8px;
     font-weight: 500;
     line-height: 24px;

@@ -11,8 +11,8 @@ import {
   XAxis,
   YAxis,
   Tooltip,
-  // Legend,
   ResponsiveContainer,
+  Rectangle,
 } from 'recharts'
 
 function DiagrammeCourbe({ userId }) {
@@ -45,22 +45,42 @@ function DiagrammeCourbe({ userId }) {
 
       return null
     }
+
+    const CustomCursor = (prop) => {
+      const { width, points } = prop
+      const X = points[0].x - 30
+      const Y = points[0].y
+      const sum = width + 50
+      return (
+        <Rectangle
+          width={sum}
+          height={350}
+          x={X}
+          y={Y}
+          style={{
+            background: 'red',
+            opacity: 0.1,
+          }}
+        />
+      )
+    }
     return (
       <div className={`diagrammes-item diagrammes_diagramme-courbe`}>
         <p className="title">
-          Durée moyenne des
-          <br />
+          Durée moyenne des <br />
           sessions
         </p>
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer
+          width="100%"
+          margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
+        >
           <LineChart
-            // width={300}
             data={getData()}
             margin={{
-              top: 55,
-              right: 12,
-              left: 12,
-              bottom: 5,
+              top: 0,
+              right: 25,
+              left: 25,
+              bottom: 0,
             }}
           >
             <Line
@@ -87,12 +107,11 @@ function DiagrammeCourbe({ userId }) {
 
             <Tooltip
               content={<CustomTooltip />}
-              wrapperStyle={{ outline: 'none', backgroundColor: 'transparent' }}
-              // cursor={false}
-              cursor={{
-                stroke: 'rgba(0, 0, 0, 0.1)',
-                strokeWidth: 80,
+              wrapperStyle={{
+                outline: 'none',
+                // backgroundColor: 'transparent',
               }}
+              cursor={<CustomCursor />}
             />
           </LineChart>
         </ResponsiveContainer>
