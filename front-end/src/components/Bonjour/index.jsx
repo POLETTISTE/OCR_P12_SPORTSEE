@@ -11,7 +11,12 @@ const Bonjour = ({ userId }) => {
   )
 
   function getUserDataMockWithId() {
-    const userData = USER_MAIN_DATA.find((user) => +user.userId === +userId)
+    const userData = USER_MAIN_DATA.find((user) => +user.id === +userId)
+
+    console.log('usermaindat')
+    console.log(USER_MAIN_DATA)
+    console.log('mock')
+    console.log(userData)
     return userData
   }
 
@@ -19,6 +24,10 @@ const Bonjour = ({ userId }) => {
     const modelisation = new Modelisation(data)
     return modelisation.formatUserName()
   }
+
+  // if (error) {
+  //   redirect react rooter ereur 404
+  // }
 
   if (data !== null) {
     return (

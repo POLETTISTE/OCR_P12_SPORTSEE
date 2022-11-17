@@ -21,7 +21,7 @@ function Energie({ userId }) {
     getUserDataMockWithId()
   )
   function getUserDataMockWithId() {
-    const userData = USER_MAIN_DATA.find((user) => +user.userId === +userId)
+    const userData = USER_MAIN_DATA.find((user) => +user.id === +userId)
     return userData
   }
 

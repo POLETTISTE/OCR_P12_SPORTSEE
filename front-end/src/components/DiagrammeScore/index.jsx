@@ -20,7 +20,7 @@ function DiagrammeScore({ userId }) {
   )
   function getUserDataMockWithId() {
     // console.log('dans fonction getUserDataMockWithId')
-    const userData = USER_MAIN_DATA.find((user) => +user.userId === +userId)
+    const userData = USER_MAIN_DATA.find((user) => +user.id === +userId)
     // console.log('userdata', userData)
     return userData
   }

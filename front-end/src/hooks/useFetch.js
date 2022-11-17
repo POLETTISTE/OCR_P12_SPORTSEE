@@ -4,12 +4,14 @@ import axios from 'axios'
 function useFetch(url, mock) {
   const [data, setData] = useState(null)
   const [error, setError] = useState(false)
-  const DATA_FROM_API = true
+
+  const DATA_FROM_API = false
 
   useEffect(() => {
     if (DATA_FROM_API) {
       fetchData()
     } else {
+      console.log(mock)
       setData(mock)
     }
   }, [])
@@ -21,7 +23,7 @@ function useFetch(url, mock) {
     } catch (error) {
       console.log('erreur dans API / serveur arrete')
 
-      setError(error)
+      setError(true)
     }
   }
   return { data, error }
