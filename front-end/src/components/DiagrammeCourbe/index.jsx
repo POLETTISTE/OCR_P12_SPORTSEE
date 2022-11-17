@@ -48,7 +48,7 @@ function DiagrammeCourbe({ userId }) {
 
     const CustomCursor = (prop) => {
       const { width, points } = prop
-      const X = points[0].x - 30
+      const X = points[0].x
       const Y = points[0].y
       const sum = width + 50
       return (
