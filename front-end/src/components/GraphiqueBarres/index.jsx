@@ -58,8 +58,8 @@ function GraphiqueBarres({ userId }) {
             barGap="10"
             margin={{
               top: 0,
-              right: 0,
-              left: 0,
+              right: 60,
+              left: 60,
               bottom: 0,
             }}
           >
@@ -70,7 +70,12 @@ function GraphiqueBarres({ userId }) {
               height={40}
             />
             <CartesianGrid vertical={false} strokeDasharray="2 2" />
-            <XAxis dataKey="name" strokeWidth={0} />
+            <XAxis
+              dataKey="name"
+              strokeWidth={0}
+              padding={{ left: -30, right: -30 }}
+              dy={10}
+            />
 
             <YAxis
               yAxisId={1}
@@ -81,6 +86,7 @@ function GraphiqueBarres({ userId }) {
               allowDecimals={false}
               tickCount={4}
               strokeWidth={0}
+              dx={50}
             />
             <YAxis hide dataKey="pv" yAxisId={2} />
 
