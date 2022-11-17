@@ -1,5 +1,4 @@
 .footer {
-  //   border: solid yellow 4px;
   background-color: var(--black);
   width: 117px;
   min-height: 933px;
@@ -8,7 +7,6 @@
   align-items: center;
   justify-content: space-between;
   &-thumbs {
-    // border: solid yellow 4px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -22,11 +20,6 @@
     }
   }
   &-copyright {
-    // display: flex;
-    // border: solid yellow 4px;
-    // height: 200px;
-    // justify-content: center;
-    // align-items: center;
     color: white;
     font-family: Roboto;
     font-size: 12px;
@@ -37,6 +30,5 @@
     writing-mode: vertical-rl;
     transform: rotate(180deg);
     margin-bottom: 59px;
-    // height: 24px;
   }
 }
