@@ -1,7 +1,12 @@
 .user {
   margin-left: 109px;
 }
-
+@media screen and (min-width: 1600px) {
+  .user {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 .user-top {
   margin-bottom: 100px;
 }
@@ -11,6 +16,12 @@
   align-items: stretch;
   width: 100%;
 }
+@media screen and (max-width: 1439px) {
+  .user-bottom {
+    flex-direction: column;
+  }
+}
+
 .user-bottom-informations-left {
   display: flex;
   flex-direction: column;
@@ -20,11 +31,17 @@
 }
 
 .user-bottom-informations-right {
-  // border: 3px solid black;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   // width: 100%;
+}
+
+@media screen and (max-width: 1439px) {
+  .user-bottom-informations-right {
+    margin-top: 50px;
+    flex-direction: row;
+  }
 }
 
 .informations {
