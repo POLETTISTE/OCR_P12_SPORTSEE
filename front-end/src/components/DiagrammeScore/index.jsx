@@ -29,7 +29,6 @@ function DiagrammeScore({ userId }) {
   }
 
   if (data !== null) {
-    console.log(getData())
     return (
       <div className={`diagrammes-item diagrammes_diagramme-score`}>
         <p className="title-score">Score</p>

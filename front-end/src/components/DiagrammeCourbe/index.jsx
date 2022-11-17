@@ -47,8 +47,9 @@ function DiagrammeCourbe({ userId }) {
     }
 
     const CustomCursor = (prop) => {
-      const { width, points } = prop
-      const X = points[0].x
+      const { payloadIndex, width, points } = prop
+      //rempli le cadre complètement si hover sur premier payload pour raison esthétique
+      const X = payloadIndex === 0 ? points[0].x - 20 : points[0].x
       const Y = points[0].y
       const sum = width + 50
       return (

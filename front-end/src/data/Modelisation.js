@@ -10,7 +10,6 @@ export class Modelisation {
 
   //component Bonjour
   formatUserName() {
-    console.log('test', this.data)
     const dataFormated = this.data.userInfos.firstName
 
     return dataFormated

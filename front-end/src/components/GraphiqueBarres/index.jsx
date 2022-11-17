@@ -11,6 +11,7 @@ import {
   XAxis,
   YAxis,
   CartesianGrid,
+  Rectangle,
   Tooltip,
   Legend,
   ResponsiveContainer,
@@ -33,7 +34,7 @@ function GraphiqueBarres({ userId }) {
   }
 
   if (data !== null) {
-    const CustomTooltip = ({ active, payload, label }) => {
+    const CustomTooltip = ({ active, payload }) => {
       if (active && payload && payload.length) {
         return (
           <div className="custom-tooltip-graphique">
@@ -93,6 +94,8 @@ function GraphiqueBarres({ userId }) {
               wrapperStyle={{
                 outline: 'none',
               }}
+              // cursor={<CustomCursor />}
+              cursor={{ fill: 'rgba(196, 196, 196, 0.5)' }}
             />
 
             <Bar
