@@ -22,19 +22,15 @@ function DiagrammeToile({ userId }) {
   )
 
   function getUserDataMockWithId() {
-    // console.log('dans fonction getUserDataMockWithId')
     const userData = USER_PERFORMANCE.find((user) => +user.userId === +userId)
-    // console.log('userdata', userData)
     return userData
   }
 
   function getData() {
     const modelisation = new Modelisation(data)
-    // console.log('modelisation', modelisation)
     return modelisation.formatDataRadarChart()
   }
 
-  // console.log(data)
   if (data !== null) {
     return (
       <div className={`diagrammes-item diagrammes_diagramme-toile`}>

@@ -13,10 +13,6 @@ const Bonjour = ({ userId }) => {
   function getUserDataMockWithId() {
     const userData = USER_MAIN_DATA.find((user) => +user.id === +userId)
 
-    console.log('usermaindat')
-    console.log(USER_MAIN_DATA)
-    console.log('mock')
-    console.log(userData)
     return userData
   }
 
