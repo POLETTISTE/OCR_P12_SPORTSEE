@@ -11,7 +11,6 @@ import {
   XAxis,
   YAxis,
   CartesianGrid,
-  Rectangle,
   Tooltip,
   Legend,
   ResponsiveContainer,
