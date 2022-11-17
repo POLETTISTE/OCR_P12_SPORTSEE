@@ -11,7 +11,7 @@ import {
   RadarChart,
   PolarGrid,
   PolarAngleAxis,
-  // PolarRadiusAxis,
+  Polygon,
   ResponsiveContainer,
 } from 'recharts'
 
