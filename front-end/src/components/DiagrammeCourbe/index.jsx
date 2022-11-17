@@ -3,8 +3,6 @@ import './style.scss'
 import { USER_AVERAGE_SESSIONS } from '../../data/mocked-data'
 import { Modelisation } from '../../data/Modelisation'
 import useFetch from '../../hooks/useFetch'
-
-// import React, { PureComponent } from 'react'
 import {
   LineChart,
   Line,
@@ -119,6 +117,9 @@ function DiagrammeCourbe({ userId }) {
       </div>
     )
   }
+  // else {
+  //   return <Navigate to="/*" />
+  // }
 }
 
 export default DiagrammeCourbe

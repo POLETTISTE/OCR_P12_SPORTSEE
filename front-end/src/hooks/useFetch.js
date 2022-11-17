@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { Navigate } from 'react-router-dom'
 
 function useFetch(url, mock) {
   const [data, setData] = useState(null)
   const [error, setError] = useState(false)
 
-  const DATA_FROM_API = false
+  const DATA_FROM_API = true
 
   useEffect(() => {
     if (DATA_FROM_API) {
@@ -20,9 +21,9 @@ function useFetch(url, mock) {
       const response = await axios.get(url)
       setData(response.data.data)
     } catch (error) {
-      console.log('erreur dans API / serveur arrete')
-
       setError(true)
+
+      console.log('erreur API / vérifier que votre serveur est bien lancé')
     }
   }
   return { data, error }

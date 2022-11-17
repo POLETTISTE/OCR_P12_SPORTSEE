@@ -21,10 +21,6 @@ const Bonjour = ({ userId }) => {
     return modelisation.formatUserName()
   }
 
-  // if (error) {
-  //   redirect react rooter ereur 404
-  // }
-
   if (data !== null) {
     return (
       <div className="bonjour">
@@ -35,6 +31,11 @@ const Bonjour = ({ userId }) => {
       </div>
     )
   }
+
+  //EN CAS D'ERREUR SERVEUR
+  // else {
+  //   return <div className="error-api">ERREUR DANS LE CHARGEMENT DE L'API</div>
+  // }
 }
 
 export default Bonjour
