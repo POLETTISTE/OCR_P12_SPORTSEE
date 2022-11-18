@@ -1,5 +1,9 @@
 ![PROJECT_12](https://img.shields.io/badge/PROJECT_12-SPORTSEE-GREEN?labelColor=BLUE&style=flat)
 
+![REACT js](https://img.shields.io/badge/REACT%20js-blue?style=flat-square)
+
+![JAVASCRIPT](https://img.shields.io/badge/JAVASCRIPT-yellow?style=flat-square)
+
 # SportSee - November 2022
 
 Source code of Project 12 - Build an analytics dashboard with React of the OpenClassrooms Application developer - JavaScript React course.
