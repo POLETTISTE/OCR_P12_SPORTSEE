@@ -1,8 +1,7 @@
-import React from 'react'
+import './style.scss'
 import useFetch from '../../hooks/useFetch'
 import { USER_MAIN_DATA } from '../../data/mocked-data'
 import { Modelisation } from '../../data/Modelisation'
-import './style.scss'
 
 const Bonjour = ({ userId }) => {
   const { data, error } = useFetch(

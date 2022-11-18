@@ -1,14 +1,9 @@
-// import { USER_MAIN_DATA } from '../data/mocked-data'
-// import { USER_ACTIVITY } from '../data/mocked-data'
-// import { USER_AVERAGE_SESSIONS } from '../data/mocked-data'
-// import { USER_PERFORMANCE } from '../data/mocked-data'
-
 export class Modelisation {
   constructor(data) {
     this.data = data
   }
 
-  //component Bonjour
+  //composant Bonjour
   formatUserName() {
     const dataFormated = this.data.userInfos.firstName
 
@@ -22,7 +17,7 @@ export class Modelisation {
     return dataFormated
   }
 
-  //graphique
+  //composant graphique
   formatDataActivity() {
     const dataFormated = this.data?.sessions.map((item, index) => {
       return {
@@ -62,20 +57,17 @@ export class Modelisation {
           item.day = 'D'
           break
         default:
-        // console.log(`erreur de jour ${el.day}.`)
       }
       return {
         name: item.day,
-        // uv: 0,
         pv: item.sessionLength,
-        // amt: 0,
       }
     })
 
     return dataFormated
   }
 
-  // composant diagramme toile
+  // composant Diagramme Toile
   formatDataRadarChart() {
     const dataFormated = this.data?.data.map((item) => {
       return {

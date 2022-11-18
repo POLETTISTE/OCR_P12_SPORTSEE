@@ -1,7 +1,5 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-
 import './style.scss'
+import { NavLink } from 'react-router-dom'
 
 import yoga from '../../assets/yoga.png'
 import swim from '../../assets/swim.png'

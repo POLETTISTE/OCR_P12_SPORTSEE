@@ -1,5 +1,3 @@
-// import React, { Fragment } from 'react'
-import React from 'react'
 import SelectUser from '../components/SelectUser'
 
 const Accueil = () => {

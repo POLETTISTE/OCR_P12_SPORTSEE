@@ -1,11 +1,5 @@
-import React from 'react'
-import { Fragment } from 'react'
 import { useParams } from 'react-router-dom'
 
-//IMPORT PAGE ERROR
-// import Error from './Error'
-
-//IMPORT COMPOSANTS
 import Bonjour from '../components/Bonjour'
 import GraphiqueBarres from '../components/GraphiqueBarres'
 import DiagrammeCourbe from '../components/DiagrammeCourbe'
@@ -13,18 +7,9 @@ import DiagrammeToile from '../components/DiagrammeToile'
 import DiagrammeScore from '../components/DiagrammeScore'
 import Energie from '../components/Energie'
 
-// //IMPORT DATA
-// import { USER_MAIN_DATA } from '../data/mocked-data.js'
-
 const User = () => {
   const params = useParams()
 
-  //on convertit item.id en string pour comparer
-  // const userData = USER_MAIN_DATA.filter((item) => item.id.toString() === id)
-
-  // if (userData.length === 0) {
-  //   return <Error />
-  // }
   return (
     <div className="user">
       <div className="user-top">

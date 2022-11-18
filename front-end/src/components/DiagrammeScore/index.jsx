@@ -1,13 +1,5 @@
 import './style.scss'
-// import React, { PureComponent } from 'react'
-import {
-  PieChart,
-  Pie,
-  // Sector,
-  // Cell,
-  ResponsiveContainer,
-  // Legend,
-} from 'recharts'
+import { PieChart, Pie, ResponsiveContainer } from 'recharts'
 
 import { USER_MAIN_DATA } from '../../data/mocked-data'
 import { Modelisation } from '../../data/Modelisation'
@@ -39,16 +31,6 @@ function DiagrammeScore({ userId }) {
         </div>
         <ResponsiveContainer width="100%" height="100%">
           <PieChart width={400} height={400}>
-            {/* <Pie
-              data={[]}
-              dataKey="value"
-              cx="50%"
-              cy="50%"
-              innerRadius={70}
-              outerRadius={60}
-              fill="black"
-              label
-            /> */}
             <Pie
               data={[
                 {
@@ -69,9 +51,6 @@ function DiagrammeScore({ userId }) {
               innerRadius={80}
               outerRadius={90}
               fill="#FF0000"
-              // label="labellll"
-              // legendType="hellooo"
-              // labelLine="hello"
             />
           </PieChart>
         </ResponsiveContainer>

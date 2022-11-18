@@ -1,6 +1,5 @@
 import './style.scss'
-import { useParams } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+
 import { USER_PERFORMANCE } from '../../data/mocked-data'
 import { Modelisation } from '../../data/Modelisation'
 import useFetch from '../../hooks/useFetch'
@@ -11,7 +10,6 @@ import {
   RadarChart,
   PolarGrid,
   PolarAngleAxis,
-  Polygon,
   ResponsiveContainer,
 } from 'recharts'
 
@@ -44,7 +42,7 @@ function DiagrammeToile({ userId }) {
           >
             <PolarGrid />
             <PolarAngleAxis dataKey="subject" tick={{ fontSize: 12 }} />
-            {/* <PolarRadiusAxis /> */}
+
             <Radar
               name="Mike"
               dataKey="A"

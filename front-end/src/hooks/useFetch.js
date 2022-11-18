@@ -5,7 +5,7 @@ function useFetch(url, mock) {
   const [data, setData] = useState(null)
   const [error, setError] = useState(false)
 
-  const DATA_FROM_API = true
+  const DATA_FROM_API = false
 
   useEffect(() => {
     if (DATA_FROM_API) {

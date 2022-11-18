@@ -89,7 +89,6 @@ function DiagrammeCourbe({ userId }) {
               content={<CustomTooltipCourbe />}
               wrapperStyle={{
                 outline: 'none',
-                // backgroundColor: 'transparent',
               }}
               cursor={<CustomCursor />}
             />
@@ -98,9 +97,6 @@ function DiagrammeCourbe({ userId }) {
       </div>
     )
   }
-  // else {
-  //   return <Navigate to="/*" />
-  // }
 }
 
 export default DiagrammeCourbe

@@ -1,8 +1,7 @@
-import React from 'react'
 import logo from '../../assets/logo.png'
 import sportsee from '../../assets/sportsee.png'
 import { NavLink } from 'react-router-dom'
-import '../Header/style.scss'
+import './style.scss'
 
 const Header = () => {
   return (
