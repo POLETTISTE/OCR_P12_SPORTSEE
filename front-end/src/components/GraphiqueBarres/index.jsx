@@ -1,5 +1,5 @@
-// import React from 'react'
 import './style.scss'
+
 import { USER_ACTIVITY } from '../../data/mocked-data'
 import { Modelisation } from '../../data/Modelisation'
 import useFetch from '../../hooks/useFetch'

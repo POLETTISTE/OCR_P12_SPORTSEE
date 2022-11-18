@@ -1,7 +1,7 @@
+import './style.scss'
 import React, { Fragment } from 'react'
 import { USER_MAIN_DATA } from '../../data/mocked-data'
 import { Modelisation } from '../../data/Modelisation'
-import './style.scss'
 import useFetch from '../../hooks/useFetch'
 
 //IMPORT IMAGES
