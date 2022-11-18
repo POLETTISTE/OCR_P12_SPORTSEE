@@ -1,4 +1,5 @@
 import './style.scss'
+import CustomCursor from '../CustomCursor/index'
 
 import { USER_AVERAGE_SESSIONS } from '../../data/mocked-data'
 import { Modelisation } from '../../data/Modelisation'
@@ -10,7 +11,6 @@ import {
   YAxis,
   Tooltip,
   ResponsiveContainer,
-  Rectangle,
 } from 'recharts'
 
 function DiagrammeCourbe({ userId }) {
@@ -32,7 +32,7 @@ function DiagrammeCourbe({ userId }) {
   }
 
   if (data !== null) {
-    const CustomTooltip = ({ active, payload }) => {
+    const CustomTooltipCourbe = ({ active, payload }) => {
       if (active && payload && payload.length) {
         return (
           <div className="custom-tooltip-courbe">
@@ -44,25 +44,6 @@ function DiagrammeCourbe({ userId }) {
       return null
     }
 
-    const CustomCursor = (prop) => {
-      const { payloadIndex, width, points } = prop
-      //rempli le cadre complètement si hover sur premier payload pour raison esthétique
-      const X = payloadIndex === 0 ? points[0].x - 20 : points[0].x
-      const Y = points[0].y
-      const sum = width + 50
-      return (
-        <Rectangle
-          width={sum}
-          height={350}
-          x={X}
-          y={Y}
-          style={{
-            background: 'red',
-            opacity: 0.1,
-          }}
-        />
-      )
-    }
     return (
       <div className={`diagrammes-item diagrammes_diagramme-courbe`}>
         <p className="title">
@@ -105,7 +86,7 @@ function DiagrammeCourbe({ userId }) {
             <YAxis hide padding={{ top: 70, bottom: 20 }} />
 
             <Tooltip
-              content={<CustomTooltip />}
+              content={<CustomTooltipCourbe />}
               wrapperStyle={{
                 outline: 'none',
                 // backgroundColor: 'transparent',

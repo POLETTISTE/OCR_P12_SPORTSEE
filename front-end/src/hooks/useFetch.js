@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Navigate } from 'react-router-dom'
 
 function useFetch(url, mock) {
   const [data, setData] = useState(null)

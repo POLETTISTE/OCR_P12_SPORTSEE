@@ -3,8 +3,8 @@ import './style.scss'
 import { USER_ACTIVITY } from '../../data/mocked-data'
 import { Modelisation } from '../../data/Modelisation'
 import useFetch from '../../hooks/useFetch'
+import CustomTooltip from '../CustomTooltip/index'
 
-// import React, { PureComponent } from 'react'
 import {
   BarChart,
   Bar,
@@ -33,19 +33,6 @@ function GraphiqueBarres({ userId }) {
   }
 
   if (data !== null) {
-    const CustomTooltip = ({ active, payload }) => {
-      if (active && payload && payload.length) {
-        return (
-          <div className="custom-tooltip-graphique">
-            <p className="Kcal">{`${payload[1].value} Kcal`}</p>
-            <p className="kg">{`${payload[0].value} kg`}</p>
-          </div>
-        )
-      }
-
-      return null
-    }
-
     return (
       <div className="graphique">
         <p className="graphique-title">Activité quotidienne</p>
@@ -93,7 +80,6 @@ function GraphiqueBarres({ userId }) {
               wrapperStyle={{
                 outline: 'none',
               }}
-              // cursor={<CustomCursor />}
               cursor={{ fill: 'rgba(196, 196, 196, 0.5)' }}
             />
 
