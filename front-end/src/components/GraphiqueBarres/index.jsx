@@ -15,18 +15,52 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts'
+import PropTypes from 'prop-types'
 
+/**
+ *
+ * @typedef PropType
+ * @property {number} userId
+ */
+
+/**
+ * @description GraphiqueBarres is a component that takes in prop an userId and returns datas from this userId
+ * @param {PropType} userId
+ * @return {object} Returns an object of datas if load data through API / if load data from
+ * mocked datas file
+ *
+ */
 function GraphiqueBarres({ userId }) {
   const { data, error } = useFetch(
     `http://localhost:3000/user/${userId}/activity`,
     getUserDataMockWithId()
   )
 
+  GraphiqueBarres.propTypes = {
+    /**
+     * User's datas
+     */
+    userId: PropTypes.string.isRequired,
+  }
+
+  /**
+   * @description getUserDataMockWithId is a function that find the own datas
+   * from the user affected by userId
+   * @return { object } Returns userData
+   *
+   */
+
   function getUserDataMockWithId() {
     const userData = USER_ACTIVITY.find((user) => +user.userId === +userId)
     return userData
   }
 
+  /**
+  * @description getData is a function that build through the class Modelisation
+  * an object of datas
+   
+  * @returns {object} Returns datas from modelisation.formatDataActivity()
+  */
   function getData() {
     const modelisation = new Modelisation(data)
     return modelisation.formatDataActivity()

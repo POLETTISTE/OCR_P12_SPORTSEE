@@ -1,4 +1,18 @@
 import './style.scss'
+import PropTypes from 'prop-types'
+
+/**
+ *
+ * @typedef PropType
+ * @property {boolean} active
+ * @property {object} payload
+ */
+
+/**
+ * @description CustomTooltip is a component that return custom design in recharts
+ * @param {PropType}
+ *
+ */
 
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
@@ -11,6 +25,14 @@ const CustomTooltip = ({ active, payload }) => {
   }
 
   return null
+}
+
+CustomTooltip.propTypes = {
+  /**
+   * CustomTooltip's datas
+   */
+  active: PropTypes.bool,
+  payload: PropTypes.array,
 }
 
 export default CustomTooltip

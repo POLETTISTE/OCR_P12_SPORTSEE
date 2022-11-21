@@ -1,5 +1,20 @@
 import { Rectangle } from 'recharts'
 import './style.scss'
+import PropTypes from 'prop-types'
+
+/**
+ *
+ * @typedef PropType
+ * @property {number} payloadIndex
+ * @property {number} width
+ * @property {number} points
+ */
+
+/**
+ * @description CustomCursor is a component that return custom design in recharts
+ * @param {PropType}
+ *
+ */
 
 const CustomCursor = (prop) => {
   const { payloadIndex, width, points } = prop
@@ -19,6 +34,14 @@ const CustomCursor = (prop) => {
       }}
     />
   )
+}
+CustomCursor.propTypes = {
+  /**
+   * CustomCursor's datas
+   */
+  payloadIndex: PropTypes.number,
+  width: PropTypes.number,
+  points: PropTypes.array,
 }
 
 export default CustomCursor

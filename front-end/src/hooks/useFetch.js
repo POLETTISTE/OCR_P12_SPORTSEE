@@ -1,6 +1,15 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
+/**
+ * @description useFetch takes an url and a mock data file as arguments
+ *
+ * @param {string} url  The address url used for fetch the API
+ * @param {string} mock  The mock datas used for fetch the datas
+ *
+ * @return {Object} Return user datas from API or mock data file
+ */
+
 function useFetch(url, mock) {
   const [data, setData] = useState(null)
   const [error, setError] = useState(false)
@@ -14,6 +23,12 @@ function useFetch(url, mock) {
       setData(mock)
     }
   }, [])
+
+  /**
+   * The function fetchData returns a promise that resolves to an object containing the data
+   *
+   * @return {Promise} Return user datas or error
+   */
 
   async function fetchData() {
     try {
