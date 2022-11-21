@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
  * @typedef PropType
  * @property {number} payloadIndex
  * @property {number} width
- * @property {number} points
+ * @property {array} points
  */
 
 /**

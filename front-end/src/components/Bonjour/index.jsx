@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
 /**
  *
  * @typedef PropType
- * @property {number} userId
+ * @property {string} userId
  */
 
 /**
@@ -67,7 +67,7 @@ const Bonjour = ({ userId }) => {
     )
   }
 
-  //EN CAS D'ERREUR SERVEUR
+  //IN CASE OF SERVER ERROR
   // else {
   //   return <div className="error-api">ERREUR DANS LE CHARGEMENT DE L'API</div>
   // }

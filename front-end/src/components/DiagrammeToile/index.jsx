@@ -15,7 +15,7 @@ import PropTypes from 'prop-types'
 /**
  *
  * @typedef PropType
- * @property {number} userId
+ * @property {string} userId
  */
 
 /**

@@ -19,7 +19,7 @@ const lipides = 'Lipides'
 /**
  *
  * @typedef PropType
- * @property {number} userId
+ * @property {string} userId
  */
 
 /**

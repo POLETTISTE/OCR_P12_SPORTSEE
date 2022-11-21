@@ -16,7 +16,7 @@ import PropTypes from 'prop-types'
 /**
  *
  * @typedef PropType
- * @property {number} userId
+ * @property {string} userId
  */
 
 /**
@@ -32,7 +32,6 @@ function DiagrammeCourbe({ userId }) {
     `http://localhost:3000/user/${userId}/average-sessions`,
     getUserDataMockWithId()
   )
-
   DiagrammeCourbe.propTypes = {
     /**
      * User's datas

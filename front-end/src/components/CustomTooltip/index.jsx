@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
  *
  * @typedef PropType
  * @property {boolean} active
- * @property {object} payload
+ * @property {array} payload
  */
 
 /**
