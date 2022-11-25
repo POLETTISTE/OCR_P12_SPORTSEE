@@ -3,21 +3,35 @@ export class Modelisation {
     this.data = data
   }
 
-  //composant Bonjour
+  /**
+   * @description composant Bonjour
+
+   * @return { object } Returns dataFormated after modelisation
+   */
+
   formatUserName() {
     const dataFormated = this.data.userInfos.firstName
 
     return dataFormated
   }
 
-  // composant Energie
+  /**
+   * @description composant Energie
+
+   * @return { object } Returns dataFormated after modelisation
+   */
+
   formatDataEnergy() {
     const dataFormated = this.data.keyData
 
     return dataFormated
   }
 
-  //composant graphique
+  /**
+   * @description composant graphique
+
+   * @return { object } Returns dataFormated after modelisation
+   */
   formatDataActivity() {
     const dataFormated = this.data?.sessions.map((item, index) => {
       return {
@@ -29,7 +43,12 @@ export class Modelisation {
 
     return dataFormated
   }
-  // composant Diagramme courbe
+
+  /**
+   * @description composant Diagramme courbe
+
+   * @return { object } Returns dataFormated after modelisation
+   */
   formatDataSessions() {
     const dataFormated = this.data?.sessions.map((item) => {
       // convertit les nombres en jours
@@ -67,7 +86,11 @@ export class Modelisation {
     return dataFormated
   }
 
-  // composant Diagramme Toile
+  /**
+   * @description composant Diagramme Toile
+
+   * @return { object } Returns dataFormated after modelisation
+   */
   formatDataRadarChart() {
     const dataFormated = this.data?.data.map((item) => {
       return {
@@ -78,7 +101,11 @@ export class Modelisation {
     return dataFormated
   }
 
-  // composant Diagramme Score
+  /**
+   * @description composant Diagramme Score
+
+   * @return { object } Returns dataFormated after modelisation
+   */
   formatDataScore() {
     const dataFormated = this.data.todayScore * 100 || this.data.score * 100
     return dataFormated
