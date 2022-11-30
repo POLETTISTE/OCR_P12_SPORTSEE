@@ -49,20 +49,6 @@ Would you like to run the app on another port instead? › (Y/n)
 N.B.:
 SportSee API only contains data for users with id 12 and 18.
 
-## How to use API or mocked datas ?
-
-go to :'src/hooks/usefetch.js'
-
-### Use API:
-
-on line 17, const DATA_FROM_API must be true
-(const DATA_FROM_API = true)
-
-### Use Mocked datas :
-
-on line 17, const DATA_FROM_API must be false
-(const DATA_FROM_API = false)
-
 ## Authors
 
 - [@POLETTISTE](https://www.github.com/POLETTISTE)

@@ -67,10 +67,10 @@ const Bonjour = ({ userId }) => {
     )
   }
 
-  // IN CASE OF SERVER ERROR
-  else {
-    return <div className="error-api">ERREUR DANS LE CHARGEMENT DE L'API</div>
-  }
+  //IN CASE OF SERVER ERROR
+  // else {
+  //   return <div className="error-api">ERREUR DANS LE CHARGEMENT DE L'API</div>
+  // }
 }
 
 export default Bonjour
