@@ -110,7 +110,6 @@ function DiagrammeCourbe({ userId }) {
                 r: 5,
               }}
             />
-
             <XAxis
               dataKey="name"
               stroke="rgba(255,255,255, 0.5)"
@@ -118,7 +117,6 @@ function DiagrammeCourbe({ userId }) {
               tick={{ fontSize: 12 }}
             />
             <YAxis hide padding={{ top: 70, bottom: 20 }} />
-
             <Tooltip
               content={<CustomTooltipCourbe />}
               wrapperStyle={{
